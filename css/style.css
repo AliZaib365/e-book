@@ -337,7 +337,7 @@
     }
     .hero-img {
       flex: 1;
-      min-width: 380px;
+      min-width: 300px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -931,10 +931,11 @@
       .features-list, .bestsellers-list { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));}
       .nav-links { display: none;}
       .mobile-menu-btn { display: block;}
-      .footer-links, .social-links { flex-direction: column; gap: 1.1rem;}
+      .footer-links, .social-links { flex-direction: row; gap: 1.1rem;}
     }
     @media (max-width: 650px) {
-      .hero-text h1 { font-size: 2.2rem;}
+      .hero-text h1 { margin-right: 50px; font-size: 1.5rem;}
+      .hero-text p { margin-right: 50px; }
       .section-title, .about h2, .cta h2 { font-size: 1.8rem;}
       .cta-btn, .hero-btn { font-size: 1.05rem; padding: 1rem 2rem;}
       .footer-links { font-size: 0.92rem;}
