@@ -263,7 +263,7 @@
       padding-right: 2rem;
     }
     .hero-text h1 {
-      font-size: 3.8rem;
+      font-size: 3rem;
       font-weight: 900;
       color: var(--black);
       margin-bottom: 1.5rem;
@@ -282,7 +282,7 @@
       border-radius: 7px;
     }
     .hero-text p {
-      font-size: 1.3rem;
+      font-size: 15px;
       margin-bottom: 2.5rem;
       color: #444;
       line-height: 1.7;
@@ -298,7 +298,7 @@
       color: var(--purple-dark);
       border-radius: 1rem;
       padding: 1rem 1.8rem;
-      font-size: 1.1rem;
+      font-size: 12px;
       font-weight: 600;
       box-shadow: var(--shadow-sm);
       display: flex;
@@ -314,9 +314,9 @@
       background: var(--purple-dark);
       color: var(--white);
       border: none;
-      font-size: 1.2rem;
+      font-size: 14px;
       font-weight: 700;
-      padding: 1.2rem 3rem;
+      padding: 1.2rem 2rem;
       border-radius: 100px;
       box-shadow: 0 7px 27px rgba(139,92,246,0.29);
       cursor: pointer;
@@ -918,7 +918,8 @@
     /* Responsive Breakpoints */
     @media (max-width: 1200px) {
       .container, .footer-content { padding: 0 24px;}
-      .hero-text h1 { font-size: 3rem;}
+      .hero-text h1 { font-size: 2rem;}
+      .hero-text p {font-size: 12px;}
       .section-title, .about h2, .cta h2 { font-size: 2rem;}
       .features-list, .bestsellers-list { gap: 1.5rem;}
       .book-card img { height: 280px;}
