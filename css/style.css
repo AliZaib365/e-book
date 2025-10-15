@@ -1599,3 +1599,342 @@
     justify-content: center;
   }
 }
+.instructor-section {
+  max-width: 1080px;
+  margin: 56px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.instructor-row {
+  display: flex;
+  gap: 46px;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.instructor-photo-box {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(162, 89, 255, 0.13);
+  border: 4px solid #a259ff;
+  overflow: hidden;
+  width: 340px;
+  min-width: 250px;
+  max-width: 340px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.instructor-photo-box.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.instructor-photo-box img {
+  display: block;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  background: #eee;
+  border-radius: 12px 12px 0 0;
+}
+
+.instructor-name-caption {
+  text-align: center;
+  padding: 7px 0 9px 0;
+  font-size: 1.06rem;
+  font-weight: 600;
+  color: #a259ff;
+  letter-spacing: 0.5px;
+  background: #fff;
+  border-radius: 0 0 14px 14px;
+  width: 100%;
+}
+
+.instructor-content {
+  flex: 1;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 340px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out 0.2s;
+}
+
+.instructor-content.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.instructor-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #231942;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.instructor-title .highlight {
+  color: #a259ff;
+}
+
+.instructor-bio {
+  font-size: 1.08rem;
+  color: #231942;
+  font-weight: 500;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.instructor-bio strong {
+  color: #7c30b6;
+  font-weight: 700;
+}
+
+.instructor-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 18px;
+  margin-bottom: 0;
+}
+
+.fact-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 18px rgba(162, 89, 255, 0.1);
+  padding: 13px 20px;
+  min-width: 190px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #231942;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-out;
+}
+
+.fact-card.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fact-card:nth-child(1) { transition-delay: 0.1s; }
+.fact-card:nth-child(2) { transition-delay: 0.2s; }
+.fact-card:nth-child(3) { transition-delay: 0.3s; }
+.fact-card:nth-child(4) { transition-delay: 0.4s; }
+
+.fact-card i {
+  color: #a259ff;
+  font-size: 1.12rem;
+  margin-right: 7px;
+  min-width: 18px;
+  text-align: center;
+}
+
+/* Journey Section */
+.journey-section {
+  width: 100%;
+  max-width: 960px;
+  margin: 24px auto 0 auto;
+  background: transparent;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.journey-section.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.journey-divider {
+  width: 98%;
+  margin: 34px auto 15px auto;
+  border: none;
+  border-top: 2px solid rgba(162, 89, 255, 0.2);
+}
+
+.journey-title {
+  font-size: 1.42rem;
+  font-weight: 800;
+  margin-bottom: 9px;
+  color: #231942;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.journey-title i {
+  color: #a259ff;
+  font-size: 1.18rem;
+}
+
+.journey-desc {
+  font-size: 1.02rem;
+  color: #231942;
+  font-weight: 500;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.journey-desc strong {
+  color: #a259ff;
+  font-weight: 700;
+}
+
+.journey-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.journey-step {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 18px rgba(162, 89, 255, 0.1);
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: #231942;
+  display: flex;
+  align-items: flex-start;
+  padding: 13px 18px 13px 18px;
+  gap: 10px;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.5s ease-out;
+}
+
+.journey-step.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.journey-step:nth-child(1) { transition-delay: 0.1s; }
+.journey-step:nth-child(2) { transition-delay: 0.2s; }
+.journey-step:nth-child(3) { transition-delay: 0.3s; }
+.journey-step:nth-child(4) { transition-delay: 0.4s; }
+.journey-step:nth-child(5) { transition-delay: 0.5s; }
+
+.journey-step i {
+  color: #a259ff;
+  font-size: 1.08rem;
+  margin-right: 7px;
+  min-width: 18px;
+  margin-top: 1px;
+}
+
+.journey-step strong {
+  color: #7c30b6;
+  font-weight: 700;
+}
+
+.journey-cta {
+  width: 100%;
+  background: #faf7ff;
+  color: #a259ff;
+  border-left: 5px solid #a259ff;
+  border-radius: 0 0 10px 10px;
+  padding: 12px 18px;
+  font-weight: 700;
+  font-size: 1.07rem;
+  margin-top: 8px;
+  box-shadow: 0 2px 12px rgba(162, 89, 255, 0.05);
+  cursor: pointer;
+  transition: background 0.2s;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-out 0.6s;
+}
+
+.journey-cta.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.journey-cta:hover {
+  background: #f0e6ff;
+}
+
+/* Responsive Design */
+@media (max-width: 1050px) {
+  .instructor-section { padding: 0 10px; }
+  .instructor-row { flex-direction: column; align-items: center; }
+  .instructor-content { max-width: 98vw; }
+}
+
+@media (max-width: 768px) {
+  .instructor-title {
+    font-size: 1.8rem;
+  }
+
+  .instructor-photo-box {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .instructor-facts {
+    justify-content: center;
+  }
+
+  .fact-card {
+    min-width: 160px;
+    flex: 1 1 calc(50% - 18px);
+  }
+}
+
+@media (max-width: 650px) {
+  .instructor-row { flex-direction: column; gap: 22px; }
+  .instructor-photo-box { width: 95vw; max-width: 330px; }
+  .instructor-content { min-width: 0; }
+  .journey-section { max-width: 98vw; }
+
+  .fact-card {
+    flex: 1 1 100%;
+  }
+
+  .instructor-title {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .instructor-bio {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .instructor-section {
+    margin-top: 30px;
+  }
+
+  .instructor-title {
+    font-size: 1.4rem;
+  }
+
+  .instructor-bio {
+    font-size: 1rem;
+  }
+
+  .journey-step {
+    padding: 10px 14px;
+    font-size: 0.95rem;
+  }
+}

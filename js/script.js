@@ -127,3 +127,50 @@
       // Add CSS transition for smooth transform
       bonusesSection.style.transition = 'transform 0.3s ease';
     });
+     const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, observerOptions);
+    
+    // Observe elements for animation
+    document.addEventListener('DOMContentLoaded', () => {
+      const elementsToAnimate = [
+        document.querySelector('.instructor-photo-box'),
+        document.querySelector('.instructor-content'),
+        document.querySelector('.journey-section'),
+        document.querySelector('.journey-cta')
+      ];
+      
+      // Add fact cards and journey steps to the list
+      const factCards = document.querySelectorAll('.fact-card');
+      const journeySteps = document.querySelectorAll('.journey-step');
+      
+      elementsToAnimate.forEach(el => {
+        if (el) observer.observe(el);
+      });
+      
+      factCards.forEach(card => {
+        observer.observe(card);
+      });
+      
+      journeySteps.forEach(step => {
+        observer.observe(step);
+      });
+      
+      // Add click functionality to CTA
+      const cta = document.querySelector('.journey-cta');
+      if (cta) {
+        cta.addEventListener('click', () => {
+          alert("I learned that a focused 3-book platform outperforms scattered content strategies. By concentrating on just three high-quality books, authors can build a stronger brand, create better marketing funnels, and establish authority in their niche more effectively than with a single book or dozens of titles.");
+        });
+      }
+    });
