@@ -90,3 +90,40 @@
         }
       });
     });
+      document.addEventListener('DOMContentLoaded', function() {
+      // Intersection Observer for scroll animations
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+      
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+          }
+        });
+      }, observerOptions);
+      
+      // Observe each bonus card
+      const bonusCards = document.querySelectorAll('.bonus-card');
+      bonusCards.forEach((card, index) => {
+        // Stagger the animation delay
+        card.style.animationDelay = `${index * 0.1}s`;
+        observer.observe(card);
+      });
+      
+      // Add subtle hover effect to the entire section
+      const bonusesSection = document.querySelector('.bonuses-section');
+      bonusesSection.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-5px)';
+      });
+      
+      bonusesSection.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+      });
+      
+      // Add CSS transition for smooth transform
+      bonusesSection.style.transition = 'transform 0.3s ease';
+    });

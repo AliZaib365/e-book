@@ -1,375 +1,361 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <title>Who Is This For? | E-Book Store</title>
+  <title>E-Book Bonuses Section</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;600;500;400&display=swap" rel="stylesheet">
-  <style>
+<style>
+  body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: linear-gradient(180deg, #f0e6ff 0%, #ffffff 100%);
+  margin: 0;
+  color: #231942;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.bonuses-section {
+  max-width: 1400px;
+  margin: 60px auto;
+  padding: 0 18px 80px 18px;
+  text-align: center;
+}
 
-    .who1-section {
-      max-width: 1400px;
-      margin: 48px auto 0 auto;
-      padding: 0 18px 90px 18px;
-      text-align: center;
-    }
+.bonuses-label {
+  display: inline-block;
+  background: #f6e6ff;
+  color: #a259ff;
+  font-weight: 700;
+  font-size: 0.98rem;
+  border-radius: 14px;
+  padding: 5px 20px 4px 20px;
+  letter-spacing: 1.1px;
+  margin-bottom: 14px;
+  animation: fadeIn 0.8s ease-out;
+}
 
-    .who1-title {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 14px;
-      color: #231942;
-      letter-spacing: 0.5px;
-      position: relative;
-      display: inline-block;
-    }
+.bonuses-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #231942;
+  letter-spacing: 0.3px;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
 
-    .who1-title::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: #7c30b6;
-      border-radius: 2px;
-    }
+.bonuses-title .highlight {
+  color: #a259ff;
+  position: relative;
+  display: inline-block;
+}
 
-    .who1-desc {
-      font-size: 1.18rem;
-      color: #231942;
-      font-weight: 500;
-      margin-bottom: 7px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.6;
-    }
+.bonuses-title .highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: rgba(162, 89, 255, 0.2);
+  z-index: -1;
+  border-radius: 4px;
+}
 
-    .who1-income {
-      font-weight: 700;
-      color: #7c30b6;
-      font-size: 1.5rem;
-      margin-bottom: 38px;
-      padding: 12px 24px;
-      background: rgba(162, 89, 255, 0.1);
-      border-radius: 30px;
-      display: inline-block;
-      border: 2px dashed #a259ff;
-      position: relative;
-      overflow: hidden;
-    }
+.bonuses-desc {
+  font-size: 1.08rem;
+  color: #351b6c;
+  margin-bottom: 38px;
+  font-weight: 500;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
 
-    .who1-income::before {
-      content: '';
-      position: absolute;
-      top: -10px;
-      left: -10px;
-      right: -10px;
-      bottom: -10px;
-      background: linear-gradient(45deg, transparent, rgba(162, 89, 255, 0.1), transparent);
-      z-index: -1;
-      animation: shimmer 3s infinite linear;
-    }
+.bonuses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  justify-content: center;
+  margin-top: 0;
+}
 
-    @keyframes shimmer {
-      0% {
-        transform: translateX(-100%);
-      }
+.bonus-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 38px rgba(162, 89, 255, 0.11);
+  display: flex;
+  align-items: flex-start;
+  padding: 22px 24px;
+  gap: 16px;
+  text-align: left;
+  transition: all 0.3s ease;
+  border-top: 4px solid #a259ff;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+}
 
-      100% {
-        transform: translateX(100%);
-      }
-    }
+.bonus-card.animate {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
 
-    .who1-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 36px;
-      justify-content: center;
-      margin-top: 10px;
-    }
+.bonus-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(162, 89, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+  z-index: 0;
+}
 
-    .who1-card {
-      background: #fff;
-      border-radius: 18px;
-      box-shadow: 0 6px 32px rgba(162, 89, 255, 0.08);
-      border-top: 3.5px solid #7c30b6;
-      width: 280px;
-      min-height: 145px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 24px 22px 19px 22px;
-      text-align: left;
-      position: relative;
-      transition: all 0.3s ease;
-      opacity: 0;
-      transform: translateY(30px);
-    }
+.bonus-card:hover {
+  box-shadow: 0 16px 44px rgba(162, 89, 255, 0.18);
+  transform: translateY(-5px);
+  border-top: 4px solid #7c30b6;
+}
 
-    .who1-card.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.bonus-num {
+  background: linear-gradient(135deg, #a259ff 60%, #c9a0ff 100%);
+  color: #ffffff;
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.23rem;
+  box-shadow: 0 2px 10px rgba(162, 89, 255, 0.16);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
 
-    .who1-card:nth-child(4n+1) {
-      border-top-color: #a259ff;
-    }
+.bonus-card:hover .bonus-num {
+  transform: scale(1.1);
+}
 
-    .who1-card:nth-child(4n+2) {
-      border-top-color: #7c30b6;
-    }
+.bonus-num .bonus-icon {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
 
-    .who1-card:nth-child(4n+3) {
-      border-top-color: #c9a0ff;
-    }
+.bonus-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
 
-    .who1-card:nth-child(4n) {
-      border-top-color: #231942;
-    }
+.bonus-title {
+  font-weight: 700;
+  font-size: 1.13rem;
+  color: #231942;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
 
-    .who1-card:hover {
-      box-shadow: 0 12px 38px rgba(162, 89, 255, 0.16);
-      transform: translateY(-6px) scale(1.03);
-    }
+.bonus-desc {
+  font-size: 1.01rem;
+  color: #231942;
+  opacity: 0.93;
+  font-weight: 500;
+  line-height: 1.6;
+}
 
-    .who1-icon {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
-      color: #a259ff;
-      transition: transform 0.3s ease;
-    }
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
-    .who1-card:hover .who1-icon {
-      transform: scale(1.1);
-    }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    .who1-card:nth-child(4n+2) .who1-icon {
-      color: #7c30b6;
-    }
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
-    .who1-card:nth-child(4n+3) .who1-icon {
-      color: #c9a0ff;
-    }
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .bonuses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
-    .who1-card:nth-child(4n) .who1-icon {
-      color: #231942;
-    }
+@media (max-width: 768px) {
+  .bonuses-section {
+    padding: 0 15px 40px 15px;
+    margin: 40px auto;
+  }
 
-    .who1-card-title {
-      font-weight: 700;
-      font-size: 1.13rem;
-      margin-bottom: 6px;
-      color: #231942;
-      letter-spacing: 0.3px;
-    }
+  .bonuses-title {
+    font-size: 1.8rem;
+  }
 
-    .who1-card-desc {
-      font-weight: 500;
-      font-size: 1.01rem;
-      color: #231942;
-      opacity: 0.9;
-      line-height: 1.6;
-    }
+  .bonuses-desc {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
 
-    .who1-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, rgba(162, 89, 255, 0.05) 0%, rgba(124, 48, 182, 0.05) 100%);
-      border-radius: 18px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      z-index: -1;
-    }
+  .bonuses-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 
-    .who1-card:hover::before {
-      opacity: 1;
-    }
+  .bonus-card {
+    padding: 18px 20px;
+  }
+}
 
-    .cta1-container {
-      margin-top: 50px;
-      text-align: center;
-    }
+@media (max-width: 480px) {
+  .bonuses-title {
+    font-size: 1.5rem;
+  }
 
-    .cta1-button {
-      background: linear-gradient(135deg, #7c30b6 0%, #a259ff 100%);
-      color: white;
-      border: none;
-      padding: 16px 32px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(162, 89, 255, 0.3);
-      letter-spacing: 0.5px;
-    }
+  .bonuses-desc {
+    font-size: 0.95rem;
+  }
 
-    .cta1-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(162, 89, 255, 0.4);
-    }
+  .bonus-card {
+    padding: 15px;
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
 
-    @media (max-width: 1100px) {
-      .who1-grid {
-        gap: 20px;
-      }
+  .bonus-num {
+    align-self: center;
+  }
 
-      .who1-card {
-        width: 275px;
-      }
-    }
+  .bonus-title {
+    justify-content: center;
+  }
+}
 
-    @media (max-width: 900px) {
-      .who1-grid {
-        gap: 16px;
-      }
-
-      .who1-card {
-        width: 95vw;
-        max-width: 340px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .who1-title {
-        font-size: 1.6rem;
-      }
-
-      .who1-section {
-        padding-bottom: 36px;
-      }
-
-      .who1-card {
-        min-height: unset;
-        padding: 20px 12px 15px 14px;
-      }
-
-      .who1-desc {
-        font-size: 1rem;
-      }
-
-      .who1-income {
-        font-size: 1.2rem;
-        padding: 10px 20px;
-      }
-    }
-  </style>
-
+</style>
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
-  <section class="who1-section">
-    <div class="who1-title">Who Is This For?</div>
-    <div class="who1-desc">
-      Perfect for beginners, freelancers, and professionals who want to launch or grow their e-book business and earn
+  <section class="bonuses-section">
+    <div class="bonuses-label">LIMITED TIME</div>
+    <div class="bonuses-title">
+      Enroll Today &amp; Get These <span class="highlight">Bonuses</span>
     </div>
-    <div class="who1-income">
-      $1,000–$2,000+/mo.
+    <div class="bonuses-desc">
+      Unlock exclusive resources — yours free when you join now.
     </div>
-    <div class="who1-grid">
-      <div class="who1-card">
-        <div class="who1-icon"><i class="fas fa-seedling"></i></div>
-        <div class="who1-card-title">Beginners</div>
-        <div class="who1-card-desc">
-          Step-by-step guidance. No experience needed. Follow a proven blueprint to your first $1k in e-book sales.
+    <div class="bonuses-grid">
+      <div class="bonus-card">
+        <div class="bonus-num"><span class="bonus-icon"><i class="fas fa-gift"></i></span></div>
+        <div class="bonus-content">
+          <div class="bonus-title">$500 E-Book Challenge</div>
+          <div class="bonus-desc">
+            Earn your first $500 by selling e-books — proven strategies and templates included.
+          </div>
         </div>
       </div>
-      <div class="who1-card">
-        <div class="who1-icon"><i class="fas fa-user-tie"></i></div>
-        <div class="who1-card-title">Freelancers</div>
-        <div class="who1-card-desc">
-          Turn small gigs into high-value digital product retainers. Sell e-book automation and marketing services.
+      <div class="bonus-card">
+        <div class="bonus-num"><span class="bonus-icon"><i class="fas fa-users"></i></span></div>
+        <div class="bonus-content">
+          <div class="bonus-title">Lifetime Community Access</div>
+          <div class="bonus-desc">
+            Get feedback, share wins, and learn from other motivated e-book entrepreneurs.
+          </div>
         </div>
       </div>
-      <div class="who1-card">
-        <div class="who1-icon"><i class="fas fa-bullhorn"></i></div>
-        <div class="who1-card-title">Digital Marketers</div>
-        <div class="who1-card-desc">
-          Add e-book products and funnels to your campaigns. Deliver measurable ROI for your clients.
+      <div class="bonus-card">
+        <div class="bonus-num"><span class="bonus-icon"><i class="fas fa-certificate"></i></span></div>
+        <div class="bonus-content">
+          <div class="bonus-title">Certificate of Completion</div>
+          <div class="bonus-desc">
+            Showcase your new skills and boost your credibility as a digital publisher.
+          </div>
         </div>
       </div>
-      <div class="who1-card">
-        <div class="who1-icon"><i class="fas fa-chart-bar"></i></div>
-        <div class="who1-card-title">Ads Experts / Media Buyers</div>
-        <div class="who1-card-desc">
-          Scale campaigns with lead magnets and digital offers. Get more leads and sales without raising ad spend.
+      <div class="bonus-card">
+        <div class="bonus-num"><span class="bonus-icon"><i class="fas fa-calendar-check"></i></span></div>
+        <div class="bonus-content">
+          <div class="bonus-title">30-Day E-Book Store Launch Plan</div>
+          <div class="bonus-desc">
+            Follow a step-by-step launch blueprint to get your e-book store live and making sales in 30 days.
+          </div>
         </div>
       </div>
-      <div class="who1-card">
-        <div class="who1-icon"><i class="fas fa-business-time"></i></div>
-        <div class="who1-card-title">9–5 Employees</div>
-        <div class="who1-card-desc">
-          Learn digital product skills to escape the paycheck-to-paycheck grind. Build a side income with e-books.
-        </div>
-      </div>
-      <div class="who1-card">
-        <div class="who1-icon"><i class="fas fa-graduation-cap"></i></div>
-        <div class="who1-card-title">Students</div>
-        <div class="who1-card-desc">
-          Earn while you learn with hands-on projects. Kickstart a career in digital publishing and marketing.
-        </div>
-      </div>
-      <div class="who1-card">
-        <div class="who1-icon"><i class="fas fa-laptop-code"></i></div>
-        <div class="who1-card-title">Web Designers</div>
-        <div class="who1-card-desc">
-          Upgrade websites with e-book stores and automations. Offer higher-value solutions to clients.
-        </div>
-      </div>
-    </div>
-
-    <div class="cta1-container">
-      <button class="cta1-button">Start Your E-Book Business Today</button>
     </div>
   </section>
 
   <script>
-    // Enhanced scroll animation for cards
-    document.addEventListener('DOMContentLoaded', function () {
-      const cards = document.querySelectorAll('.who1-card');
-
-      function isInViewport(element) {
-        const rect = element.getBoundingClientRect();
-        return (
-          rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.85 &&
-          rect.bottom >= 0
-        );
-      }
-
-      function handleScrollAnimation() {
-        cards.forEach((card, index) => {
-          if (isInViewport(card)) {
-            setTimeout(() => {
-              card.classList.add('visible');
-            }, index * 100);
+    document.addEventListener('DOMContentLoaded', function() {
+      // Intersection Observer for scroll animations
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+      
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
           }
         });
-      }
-
-      handleScrollAnimation();
-
-      let ticking = false;
-      window.addEventListener('scroll', function () {
-        if (!ticking) {
-          requestAnimationFrame(function () {
-            handleScrollAnimation();
-            ticking = false;
-          });
-          ticking = true;
-        }
+      }, observerOptions);
+      
+      // Observe each bonus card
+      const bonusCards = document.querySelectorAll('.bonus-card');
+      bonusCards.forEach((card, index) => {
+        // Stagger the animation delay
+        card.style.animationDelay = `${index * 0.1}s`;
+        observer.observe(card);
       });
+      
+      // Add subtle hover effect to the entire section
+      const bonusesSection = document.querySelector('.bonuses-section');
+      bonusesSection.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-5px)';
+      });
+      
+      bonusesSection.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+      });
+      
+      // Add CSS transition for smooth transform
+      bonusesSection.style.transition = 'transform 0.3s ease';
     });
   </script>
 </body>
-
 </html>
