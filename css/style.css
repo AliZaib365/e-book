@@ -554,7 +554,7 @@
 
     .outline-section-wrapper {
       max-width: 1250px;
-      margin: 30px auto;
+      margin: 100px auto;
       padding: 0 20px;
       display: flex;
       gap: 40px;
@@ -615,7 +615,7 @@
 
     .outline-sidebar-list li {
       border-radius: 12px;
-      font-size: 1.05rem;
+      font-size: 15px;
       font-weight: 500;
       color: #231942;
       padding: 12px 18px;
@@ -697,7 +697,7 @@
     }
 
     .outline-title {
-      font-size: 2.4rem;
+      font-size: 25px;
       font-weight: 800;
       margin: 0 0 10px 0;
       color: #231942;
@@ -710,7 +710,7 @@
 
     .outline-desc {
       color: #7c30b6;
-      font-size: 1.1rem;
+      font-size: 15px;
       font-weight: 500;
       margin-bottom: 5px;
     }
@@ -726,7 +726,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      font-size: 0.9rem;
+      font-size: 11px;
       color: #7c30b6;
     }
 
@@ -856,7 +856,7 @@
     }
 
     .outline-module-desc {
-      font-size: 0.95rem;
+      font-size: 15px;
       color: #7c30b6;
       margin-bottom: 15px;
       line-height: 1.5;
@@ -870,7 +870,7 @@
     }
 
     .outline-module-tag {
-      font-size: 0.9rem;
+      font-size: 11px;
       background: #f5f3fa;
       color: #7c30b6;
       border-radius: 20px;
@@ -899,7 +899,7 @@
       display: flex;
       align-items: center;
       gap: 5px;
-      font-size: 0.85rem;
+      font-size: 12px;
       color: #7c30b6;
     }
 
@@ -1097,5 +1097,259 @@
       .outline-module-details {
         flex-direction: column;
         gap: 10px;
+      }
+    }
+    
+    .who1-section {
+      max-width: 1400px;
+      margin: 48px auto 0 auto;
+      padding: 0 18px 90px 18px;
+      text-align: center;
+    }
+
+    .who1-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+      color: #231942;
+      letter-spacing: 0.5px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .who1-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: #7c30b6;
+      border-radius: 2px;
+    }
+
+    .who1-desc {
+      font-size: 1.18rem;
+      color: #231942;
+      font-weight: 500;
+      margin-bottom: 7px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    .who1-income {
+      font-weight: 700;
+      color: #7c30b6;
+      font-size: 1.5rem;
+      margin-bottom: 38px;
+      padding: 12px 24px;
+      background: rgba(162, 89, 255, 0.1);
+      border-radius: 30px;
+      display: inline-block;
+      border: 2px dashed #a259ff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .who1-income::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      background: linear-gradient(45deg, transparent, rgba(162, 89, 255, 0.1), transparent);
+      z-index: -1;
+      animation: shimmer 3s infinite linear;
+    }
+
+    @keyframes shimmer {
+      0% {
+        transform: translateX(-100%);
+      }
+
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    .who1-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 36px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .who1-card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 6px 32px rgba(162, 89, 255, 0.08);
+      border-top: 3.5px solid #7c30b6;
+      width: 280px;
+      min-height: 145px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 24px 22px 19px 22px;
+      text-align: left;
+      position: relative;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .who1-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .who1-card:nth-child(4n+1) {
+      border-top-color: #a259ff;
+    }
+
+    .who1-card:nth-child(4n+2) {
+      border-top-color: #7c30b6;
+    }
+
+    .who1-card:nth-child(4n+3) {
+      border-top-color: #c9a0ff;
+    }
+
+    .who1-card:nth-child(4n) {
+      border-top-color: #231942;
+    }
+
+    .who1-card:hover {
+      box-shadow: 0 12px 38px rgba(162, 89, 255, 0.16);
+      transform: translateY(-6px) scale(1.03);
+    }
+
+    .who1-icon {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      color: #a259ff;
+      transition: transform 0.3s ease;
+    }
+
+    .who1-card:hover .who1-icon {
+      transform: scale(1.1);
+    }
+
+    .who1-card:nth-child(4n+2) .who1-icon {
+      color: #7c30b6;
+    }
+
+    .who1-card:nth-child(4n+3) .who1-icon {
+      color: #c9a0ff;
+    }
+
+    .who1-card:nth-child(4n) .who1-icon {
+      color: #231942;
+    }
+
+    .who1-card-title {
+      font-weight: 700;
+      font-size: 1.13rem;
+      margin-bottom: 6px;
+      color: #231942;
+      letter-spacing: 0.3px;
+    }
+
+    .who1-card-desc {
+      font-weight: 500;
+      font-size: 1.01rem;
+      color: #231942;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+
+    .who1-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(162, 89, 255, 0.05) 0%, rgba(124, 48, 182, 0.05) 100%);
+      border-radius: 18px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+
+    .who1-card:hover::before {
+      opacity: 1;
+    }
+
+    .cta1-container {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .cta1-button {
+      background: linear-gradient(135deg, #7c30b6 0%, #a259ff 100%);
+      color: white;
+      border: none;
+      padding: 16px 32px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(162, 89, 255, 0.3);
+      letter-spacing: 0.5px;
+    }
+
+    .cta1-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(162, 89, 255, 0.4);
+    }
+
+    @media (max-width: 1100px) {
+      .who1-grid {
+        gap: 20px;
+      }
+
+      .who1-card {
+        width: 275px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .who1-grid {
+        gap: 16px;
+      }
+
+      .who1-card {
+        width: 95vw;
+        max-width: 340px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .who1-title {
+        font-size: 1.6rem;
+      }
+
+      .who1-section {
+        padding-bottom: 36px;
+      }
+
+      .who1-card {
+        min-height: unset;
+        padding: 20px 12px 15px 14px;
+      }
+
+      .who1-desc {
+        font-size: 1rem;
+      }
+
+      .who1-income {
+        font-size: 1.2rem;
+        padding: 10px 20px;
       }
     }

@@ -56,3 +56,37 @@
       revealOnScroll();
       window.addEventListener('scroll', revealOnScroll);
     });
+     document.addEventListener('DOMContentLoaded', function () {
+      const cards = document.querySelectorAll('.who1-card');
+
+      function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+          rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.85 &&
+          rect.bottom >= 0
+        );
+      }
+
+      function handleScrollAnimation() {
+        cards.forEach((card, index) => {
+          if (isInViewport(card)) {
+            setTimeout(() => {
+              card.classList.add('visible');
+            }, index * 100);
+          }
+        });
+      }
+
+      handleScrollAnimation();
+
+      let ticking = false;
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          requestAnimationFrame(function () {
+            handleScrollAnimation();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+    });
