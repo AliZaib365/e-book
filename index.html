@@ -2,260 +2,334 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Alphagon | Premium Ebooks by Hamna Nadeem</title>
-  <meta name="description" content="Alphagon is your digital gateway to exclusive ebooks curated by Hamna Nadeem. Enjoy instant delivery, secure payments, and a curated library for every reader.">
-  <meta name="keywords" content="ebooks, Hamna Nadeem, online bookstore, buy books, Alphagon, reading, digital library, bestsellers">
-  <meta name="author" content="Hamna Nadeem">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Hamna Nadeem E-Book Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
- <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar" aria-label="Main navigation">
-    <div class="container nav-content">
-      <a href="/" class="brand" tabindex="0">
-        <i class="fas fa-book-open brand-icon"></i>
-        Alphagon
-      </a>
-      <div class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#bestsellers">Bestsellers</a>
-        <a href="#about">About</a>
-        <a href="#cta">Shop Now</a>
-      </div>
-      <button class="mobile-menu-btn" aria-label="Open menu" aria-controls="mobile-sidebar" aria-expanded="false">
-        <i class="fas fa-bars"></i>
-      </button>
+  <!-- Enhanced Navbar -->
+  <nav class="navbar">
+    <span class="logo"><i class="fas fa-book"></i>E-Book<span class="logo-dot">.</span></span>
+    <div class="navbar-menu">
+      <a href="#home" class="active">Home</a>
+      <a href="#store">Store</a>
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </div>
+    <div class="navbar-actions">
+      <a href="#search"><i class="fas fa-search"></i></a>
+      <a href="#cart"><i class="fas fa-shopping-cart"></i></a>
+      <a href="#account"><i class="fas fa-user"></i></a>
+    </div>
+    <span class="menu-icon" onclick="openSidebar()">&#9776;</span>
   </nav>
-
-  <!-- Mobile Sidebar -->
-  <div class="mobile-sidebar-overlay" tabindex="-1" aria-label="Sidebar overlay"></div>
-  <aside class="mobile-sidebar" id="mobile-sidebar" aria-label="Mobile navigation" tabindex="-1">
-    <div class="mobile-sidebar-links">
-      <a href="#features"><i class="fas fa-star"></i> Features</a>
-      <a href="#bestsellers"><i class="fas fa-fire"></i> Bestsellers</a>
-      <a href="#about"><i class="fas fa-info-circle"></i> About</a>
-      <a href="#cta"><i class="fas fa-shopping-cart"></i> Shop Now</a>
-      <a href="#"><i class="fas fa-question-circle"></i> FAQ</a>
-      <a href="#"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
-      <a href="#"><i class="fas fa-file-contract"></i> Terms of Service</a>
+  <!-- Sidebar for mobile -->
+  <div class="sidebar" id="sidebar">
+    <button class="close-btn" onclick="closeSidebar()">&times;</button>
+    <a href="#home" onclick="closeSidebar()"><i class="fas fa-home"></i>Home</a>
+    <a href="#store" onclick="closeSidebar()"><i class="fas fa-store"></i>Store</a>
+    <a href="#features" onclick="closeSidebar()"><i class="fas fa-star"></i>Features</a>
+    <a href="#about" onclick="closeSidebar()"><i class="fas fa-info-circle"></i>About</a>
+    <a href="#contact" onclick="closeSidebar()"><i class="fas fa-envelope"></i>Contact</a>
+    <a href="#cart" onclick="closeSidebar()"><i class="fas fa-shopping-cart"></i>Cart</a>
+  </div>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="logo-svg-container">
+      <img src="images/hamnanadeemlogo1.1-02.svg" alt="Hamna Nadeem Logo" style="height:250px;max-width:280px;width:auto;">
     </div>
-    <div class="mobile-sidebar-footer">
-      <div class="social-links">
-        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
-      </div>
-      <div class="copyright">
-        &copy; 2025 Alphagon | Created with <span style="color:var(--purple);">💜</span> by Hamna Nadeem.
-      </div>
+    <div class="subtitle">
+      <span>With Zero $ Investment</span>
     </div>
-  </aside>
-
-  <main>
-    <!-- Hero -->
-    <section class="hero container" aria-labelledby="main-title">
-      <div class="particles" id="particles"></div>
-      <div class="hero-text">
-        <h1 id="main-title">Discover, Read &amp; Grow with Alphagon</h1>
-        <p>Your digital gateway to exclusive ebooks, curated with passion by <span style="color:var(--purple);font-weight:700;">Hamna Nadeem</span>. Dive into a world of knowledge, stories, and inspiration—right at your fingertips.</p>
-        <div class="hero-stats">
-          <div class="hero-stat"><i class="fas fa-book-open"></i> 400+ Titles</div>
-          <div class="hero-stat"><i class="fas fa-users"></i> 7,000+ Readers</div>
-          <div class="hero-stat"><i class="fas fa-star"></i> 4.8/5 Avg Rating</div>
-        </div>
-        <a href="#cta"><button class="hero-btn"><i class="fas fa-shopping-cart"></i> Browse Ebooks</button></a>
-      </div>
-      <div class="hero-img">
-        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=900&q=80"
-          alt="Showcase of eBooks in Alphagon collection" loading="lazy">
-      </div>
-    </section>
-
-    <!-- Features -->
-    <section id="features" class="features" aria-labelledby="features-title">
-      <div class="container">
-        <h2 id="features-title" class="section-title">Why Choose Alphagon</h2>
-        <div class="features-list">
-          <div class="feature-card" tabindex="0">
-            <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            <h3>Instant Delivery</h3>
-            <p>Get your purchased ebooks delivered instantly to your inbox—no waiting, just reading. Start enjoying your books within seconds.</p>
-          </div>
-          <div class="feature-card" tabindex="0">
-            <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
-            <h3>Secure Payments</h3>
-            <p>Shop worry-free with encrypted, fast, and secure payment options. Your privacy and financial data are always protected.</p>
-          </div>
-          <div class="feature-card" tabindex="0">
-            <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z"/></svg>
-            <h3>Curated Library</h3>
-            <p>Carefully selected ebooks to ensure quality, diversity, and enrichment for every reader. New releases every month!</p>
-          </div>
-          <div class="feature-card" tabindex="0">
-            <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 9h-2V5h2v6zm0 4h-2v-2h2v2z"/></svg>
-            <h3>24/7 Support</h3>
-            <p>Our team is here to help you anytime, making your reading experience seamless. Reach us via chat, email or call anytime.</p>
+    <div class="headline">
+      EARN <span class="purple">$1000+</span> A MONTH BY SELLING <span class="accent">E-BOOKS &amp; DIGITAL CONTENT</span> ONLINE <span class="accent">AS A BEGINNER.</span>
+    </div>
+    <div class="desc">
+      Unlock the secrets to building your own successful e-book store.<br>
+      Even if you're a complete beginner and have never sold online before.
+    </div>
+    <div class="details">
+      <div class="video-container">
+        <div class="video-wrapper">
+          <iframe id="videoPlayer" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="video-overlay" id="videoOverlay">
+            <div class="play-button">
+              <i class="fas fa-play"></i>
+            </div>
+            <div class="video-title">See How It Works</div>
+            <div class="video-subtitle">Watch our success story and learn how to start earning today</div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Bestsellers -->
-    <section id="bestsellers" class="bestsellers" aria-labelledby="bestsellers-title">
-      <div class="container">
-        <h2 id="bestsellers-title" class="section-title">Bestselling Ebooks</h2>
-        <div class="bestsellers-list">
-          <div class="book-card" tabindex="0">
-            <img src="https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=600&q=80"
-              alt="Cover of The Power of Habit" loading="lazy">
-            <div class="book-title">The Power of Habit</div>
-            <div class="book-author">by Charles Duhigg</div>
-            <div class="book-desc">Discover how habits form and how you can change them to transform your life and career.</div>
-            <div class="book-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <span style="color:#777; margin-left:5px;">4.5</span>
-            </div>
-            <div class="book-price">$9.99</div>
-            <div class="book-actions">
-              <button class="book-btn">Buy Now</button>
-              <button class="book-btn outline">Preview</button>
-            </div>
-          </div>
-          <div class="book-card" tabindex="0">
-            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80"
-              alt="Cover of Atomic Habits" loading="lazy">
-            <div class="book-title">Atomic Habits</div>
-            <div class="book-author">by James Clear</div>
-            <div class="book-desc">Your guide to building good habits, breaking bad ones, and mastering tiny behaviors that lead to remarkable results.</div>
-            <div class="book-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <span style="color:#777; margin-left:5px;">5.0</span>
-            </div>
-            <div class="book-price">$8.49</div>
-            <div class="book-actions">
-              <button class="book-btn">Buy Now</button>
-              <button class="book-btn outline">Preview</button>
-            </div>
-          </div>
-          <div class="book-card" tabindex="0">
-            <img src="https://marketplace.canva.com/EAGKkPbakT4/1/0/1003w/canva-purple-sky-book-cover-UOKyRwxSEZQ.jpg"
-              alt="Cover of Deep Work" loading="lazy">
-            <div class="book-title">Tales under a Purple sky</div>
-            <div class="book-author">by Cal Newport</div>
-            <div class="book-desc">Learn the art of focused success in a distracted world, and boost your productivity exponentially.</div>
-            <div class="book-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <span style="color:#777; margin-left:5px;">4.0</span>
-            </div>
-            <div class="book-price">$7.99</div>
-            <div class="book-actions">
-              <button class="book-btn">Buy Now</button>
-              <button class="book-btn outline">Preview</button>
-            </div>
-          </div>
-          <div class="book-card" tabindex="0">
-            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80"
-              alt="Cover of Mindset: The New Psychology" loading="lazy">
-            <div class="book-title">Mindset: The New Psychology</div>
-            <div class="book-author">by Carol S. Dweck</div>
-            <div class="book-desc">Explore the power of a growth mindset and how it can transform your approach to learning and success.</div>
-            <div class="book-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <span style="color:#777; margin-left:5px;">4.5</span>
-            </div>
-            <div class="book-price">$10.99</div>
-            <div class="book-actions">
-              <button class="book-btn">Buy Now</button>
-              <button class="book-btn outline">Preview</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="about" aria-labelledby="about-title">
-      <div class="container about-content">
-        <h2 id="about-title">About Alphagon</h2>
-        <p>Founded by <b>Hamna Nadeem</b>, Alphagon is a passionate ebook marketplace dedicated to empowering readers with instant access to knowledge and stories. Every title in our collection is handpicked for quality and inspiration.</p>
-        <p>We believe that reading should be an immersive, accessible, and transformative experience. That's why we've created a platform that connects readers with exceptional content while supporting authors in sharing their voices with the world.</p>
-        <p>Join the Alphagon community and unlock your next adventure—one page at a time. We celebrate diversity in genres, support emerging writers, and strive to make learning enjoyable for everyone.</p>
-        <div class="founder">
-          <div class="founder-img">
-            <img src="images/459177438_1308076313732435_7298257880673205100_n.jpg" loading="lazy">
-          </div>
-          <div class="founder-info">
-            <div class="founder-name">Hamna Nadeem</div>
-            <div class="founder-title">Founder & Curator</div>git add <div class=""></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section id="cta" class="cta" aria-labelledby="cta-title">
-      <div class="container cta-content">
-        <h2 id="cta-title">Ready to Elevate Your Mind?</h2>
-        <p>Browse our curated collection of transformative ebooks and start your journey to personal growth today. Join thousands of readers who trust Alphagon for their digital reading adventure.</p>
-        <button class="cta-btn"><i class="fas fa-shopping-cart"></i> Shop Now</button>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer" aria-label="Footer">
-    <div class="footer-content">
-      <div class="footer-links">
-        <a href="#features">Features</a>
-        <a href="#bestsellers">Bestsellers</a>
-        <a href="#about">About</a>
-        <a href="#cta">Shop Now</a>
-        <a href="#">FAQ</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-      </div>
-      <div class="social-links">
-        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
-      </div>
-      <div class="copyright">
-        &copy; 2025 Alphagon | Created with <span style="color:var(--purple);">💜</span> by Hamna Nadeem. | <a href="mailto:info@alphagon.com">Contact Us</a>
       </div>
     </div>
-  </footer>
-
-  <!-- Back to Top Button -->
-  <button class="back-to-top" aria-label="Back to top">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-<script src="js/script.js"></script>
-
+    <button class="cta-btn">
+      BUY NOW AT DISCOUNTED PRICE!
+    </button>
+  </section>
+<section class="outline-section-wrapper">
+    <!-- Sidebar -->
+    <aside class="outline-sidebar animate-on-scroll">
+      <div class="outline-sidebar-title">COURSE OUTLINE</div>
+      <ul class="outline-sidebar-list">
+        <li>E-Book Market Fundamentals</li>
+        <li class="selected">Store Setup & Platform Selection</li>
+        <li>Product Creation & Formatting</li>
+        <li>Payment Processing & Security</li>
+        <li>Marketing & Promotion Strategies</li>
+        <li>Customer Retention & Upselling</li>
+        <li>Analytics & Performance Tracking</li>
+        <li>Advanced Sales Techniques</li>
+        <li>Legal Considerations</li>
+        <li>Scaling Your E-Book Business</li>
+      </ul>
+      <div class="outline-sidebar-stats">
+        <div class="stat-item">
+          <span class="stat-label">Total Modules:</span>
+          <span class="stat-value">10</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Duration:</span>
+          <span class="stat-value">12 hours</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Progress:</span>
+          <span class="stat-value">40%</span>
+        </div>
+      </div>
+    </aside>
+    <!-- Main Content -->
+    <main class="outline-main">
+      <div class="outline-header animate-on-scroll">
+        <div class="outline-title">E-Book Store Masterclass</div>
+        <div class="outline-desc">
+          A comprehensive guide to building and scaling a profitable e-book business in 2025.
+        </div>
+        <div class="outline-meta">
+          <div class="meta-item">
+            <i class="far fa-clock"></i>
+            <span>12 hours of content</span>
+          </div>
+          <div class="meta-item">
+            <i class="far fa-file-alt"></i>
+            <span>10 modules</span>
+          </div>
+          <div class="meta-item">
+            <i class="far fa-star"></i>
+            <span>4.8/5 rating</span>
+          </div>
+          <div class="meta-item">
+            <i class="fas fa-user-graduate"></i>
+            <span>2,450 students</span>
+          </div>
+        </div>
+      </div>
+      <div class="outline-searchbar-wrap animate-on-scroll">
+        <i class="fas fa-search outline-searchbar-icon"></i>
+        <input class="outline-searchbar" type="text" placeholder="Search modules, topics, or keywords...">
+      </div>
+      <div class="outline-module-list">
+        <div class="outline-module-card animate-on-scroll">
+          <div class="outline-module-number">1</div>
+          <div class="outline-module-content">
+            <div class="outline-module-title">E-Book Market Fundamentals</div>
+            <div class="outline-module-desc">
+              Understand the current e-book landscape, identify profitable niches, analyze reader demographics, and learn what makes an e-book successful in today's market.
+            </div>
+            <div class="outline-module-tags">
+              <span class="outline-module-tag">Market Research</span>
+              <span class="outline-module-tag">Niche Selection</span>
+              <span class="outline-module-tag">Trend Analysis</span>
+            </div>
+            <div class="outline-module-details">
+              <div class="module-detail">
+                <i class="far fa-clock"></i>
+                <span>1 hour</span>
+              </div>
+              <div class="module-detail">
+                <i class="far fa-play-circle"></i>
+                <span>6 videos</span>
+              </div>
+              <div class="module-detail">
+                <i class="far fa-file-pdf"></i>
+                <span>4 resources</span>
+              </div>
+              <div class="module-detail">
+                <i class="far fa-check-circle"></i>
+                <span>Completed</span>
+              </div>
+            </div>
+            <div class="progress-container">
+              <div class="progress-bar" style="width: 100%"></div>
+            </div>
+          </div>
+          <div class="outline-module-actions">
+            <button title="Expand"><i class="fas fa-chevron-down"></i></button>
+            <button title="Bookmark"><i class="fas fa-bookmark"></i></button>
+          </div>
+        </div>
+        <div class="outline-module-card animate-on-scroll">
+          <div class="outline-module-number">2</div>
+          <div class="outline-module-content">
+            <div class="outline-module-title">Store Setup & Platform Selection</div>
+            <div class="outline-module-desc">
+              Compare different e-commerce platforms, set up your digital storefront with optimized UX/UI design, and configure essential store settings for maximum conversions.
+            </div>
+            <div class="outline-module-tags">
+              <span class="outline-module-tag">Platform Comparison</span>
+              <span class="outline-module-tag">Store Setup</span>
+              <span class="outline-module-tag">UX Optimization</span>
+            </div>
+            <div class="outline-module-details">
+              <div class="module-detail">
+                <i class="far fa-clock"></i>
+                <span>2 hours</span>
+              </div>
+              <div class="module-detail">
+                <i class="far fa-play-circle"></i>
+                <span>9 videos</span>
+              </div>
+              <div class="module-detail">
+                <i class="far fa-file-pdf"></i>
+                <span>6 resources</span>
+              </div>
+              <div class="module-detail">
+                <i class="far fa-check-circle"></i>
+                <span>Completed</span>
+              </div>
+            </div>
+            <div class="progress-container">
+              <div class="progress-bar" style="width: 100%"></div>
+            </div>
+          </div>
+          <div class="outline-module-actions">
+            <button title="Expand"><i class="fas fa-chevron-down"></i></button>
+            <button title="Bookmark"><i class="fas fa-bookmark"></i></button>
+          </div>
+        </div>
+        <div class="outline-module-card animate-on-scroll">
+          <div class="outline-module-number">3</div>
+          <div class="outline-module-content">
+            <div class="outline-module-title">Product Creation & Formatting</div>
+            <div class="outline-module-desc">
+              Learn professional e-book formatting techniques, cover design principles, and create compelling product descriptions that drive sales across multiple devices and platforms.
+            </div>
+            <div class="outline-module-tags">
+              <span class="outline-module-tag">Formatting</span>
+              <span class="outline-module-tag">Cover Design</span>
+              <span class="outline-module-tag">Product Pages</span>
+            </div>
+            <div class="outline-module-details">
+              <div class="module-detail">
+                <i class="far fa-clock"></i>
+                <span>1.5 hours</span>
+              </div>
+              <div class="module-detail">
+                <i class="far fa-play-circle"></i>
+                <span>7 videos</span>
+              </div>
+              <div class="module-detail">
+                <i class="far fa-file-pdf"></i>
+                <span>5 resources</span>
+              </div>
+              <div class="module-detail">
+                <i class="fas fa-spinner"></i>
+                <span>In Progress</span>
+              </div>
+            </div>
+            <div class="progress-container">
+              <div class="progress-bar" style="width: 60%"></div>
+            </div>
+          </div>
+          <div class="outline-module-actions">
+            <button title="Expand"><i class="fas fa-chevron-down"></i></button>
+            <button title="Bookmark"><i class="far fa-bookmark"></i></button>
+          </div>
+        </div>
+        <div class="outline-module-card animate-on-scroll">
+          <div class="outline-module-number">4</div>
+          <div class="outline-module-content">
+            <div class="outline-module-title">Payment Processing & Security</div>
+            <div class="outline-module-desc">
+              Implement secure payment gateways, set up automated delivery systems, understand transaction security protocols, and ensure compliance with data protection regulations.
+            </div>
+            <div class="outline-module-tags">
+              <span class="outline-module-tag">Payment Gateways</span>
+              <span class="outline-module-tag">Security</span>
+              <span class="outline-module-tag">Automation</span>
+            </div>
+            <div class="outline-module-details">
+              <div class="module-detail">
+                <i class="far fa-clock"></i>
+                <span>1.5 hours</span>
+              </div>
+              <div class="module-detail">
+                <i class="far fa-play-circle"></i>
+                <span>8 videos</span>
+              </div>
+              <div class="module-detail">
+                <i class="far fa-file-pdf"></i>
+                <span>4 resources</span>
+              </div>
+              <div class="module-detail">
+                <i class="far fa-circle"></i>
+                <span>Not Started</span>
+              </div>
+            </div>
+            <div class="progress-container">
+              <div class="progress-bar" style="width: 0%"></div>
+            </div>
+          </div>
+          <div class="outline-module-actions">
+            <button title="Expand"><i class="fas fa-chevron-down"></i></button>
+            <button title="Bookmark"><i class="far fa-bookmark"></i></button>
+          </div>
+        </div>
+        <div class="outline-module-card animate-on-scroll">
+          <div class="outline-module-number">5</div>
+          <div class="outline-module-content">
+            <div class="outline-module-title">Marketing & Promotion Strategies</div>
+            <div class="outline-module-desc">
+              Develop comprehensive marketing plans, leverage social media platforms, implement SEO techniques, and create effective email campaigns to drive traffic and convert visitors.
+            </div>
+            <div class="outline-module-tags">
+              <span class="outline-module-tag">Digital Marketing</span>
+              <span class="outline-module-tag">Social Media</span>
+              <span class="outline-module-tag">SEO</span>
+              <span class="outline-module-tag">Email Campaigns</span>
+            </div>
+            <div class="outline-module-details">
+              <div class="module-detail">
+                <i class="far fa-clock"></i>
+                <span>2.5 hours</span>
+              </div>
+              <div class="module-detail">
+                <i class="far fa-play-circle"></i>
+                <span>12 videos</span>
+              </div>
+              <div class="module-detail">
+                <i class="far fa-file-pdf"></i>
+                <span>8 resources</span>
+              </div>
+              <div class="module-detail">
+                <i class="far fa-circle"></i>
+                <span>Not Started</span>
+              </div>
+            </div>
+            <div class="progress-container">
+              <div class="progress-bar" style="width: 0%"></div>
+            </div>
+          </div>
+          <div class="outline-module-actions">
+            <button title="Expand"><i class="fas fa-chevron-down"></i></button>
+            <button title="Bookmark"><i class="far fa-bookmark"></i></button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </section>
 </body>
+<script src="./js/script.js"></script>
 </html>

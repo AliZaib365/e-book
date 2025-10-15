@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1080 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #680f87;
+        filter: url(#drop-shadow-1);
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #f9ce03;
+        font-size: 27.09px;
+      }
+
+      .cls-2, .cls-3 {
+        font-family: Poppins-ExtraBold, Poppins;
+        font-weight: 700;
+      }
+
+      .cls-3 {
+        font-size: 229.46px;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #000;
+      }
+
+      .cls-4 {
+        font-family: Poppins-Black, Poppins;
+        font-size: 209.8px;
+        font-weight: 800;
+      }
+    </style>
+    <filter id="drop-shadow-1" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="1"/>
+      <feGaussianBlur result="blur" stdDeviation="1"/>
+      <feFlood flood-color="#000" flood-opacity=".75"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <text class="cls-4" transform="translate(81.71 700.63)"><tspan x="0" y="0">NADEEM</tspan></text>
+  <text class="cls-3" transform="translate(78.93 519.42)"><tspan x="0" y="0">HAMNA</tspan></text>
+  <g>
+    <rect class="cls-1" x="682.43" y="555.06" width="316.34" height="42.91" rx="15.06" ry="15.06" transform="translate(-44.83 71.56) rotate(-4.75)"/>
+    <text class="cls-2" transform="translate(691.62 599.28) rotate(-4.75)"><tspan x="0" y="0">BRANDING THERAPIST</tspan></text>
+  </g>
+</svg>
