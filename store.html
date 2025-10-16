@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shop | E-Book Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;600;500;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="./css/store.css">
+</head>
+<body>
+  <!-- Enhanced Navbar -->
+  <nav class="navbar">
+    <span class="logo"><i class="fas fa-book"></i>E-Book<span class="logo-dot">.</span></span>
+    <div class="navbar-menu">
+      <a href="index.html" class="active">Home</a>
+      <a href="store.html">Store</a>
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="navbar-actions">
+      <a href="#search"><i class="fas fa-search"></i></a>
+      <a href="#" id="cartIcon">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+      <a href="#account"><i class="fas fa-user"></i></a>
+    </div>
+    <span class="menu-icon" onclick="openSidebar()">&#9776;</span>
+  </nav>
+  
+  <!-- Sidebar for mobile -->
+  <div class="sidebar" id="sidebar">
+    <button class="close-btn" onclick="closeSidebar()">&times;</button>
+    <a href="index.html" onclick="closeSidebar()"><i class="fas fa-home"></i>Home</a>
+    <a href="store.html" onclick="closeSidebar()"><i class="fas fa-store"></i>Store</a>
+    <a href="#features" onclick="closeSidebar()"><i class="fas fa-star"></i>Features</a>
+    <a href="#about" onclick="closeSidebar()"><i class="fas fa-info-circle"></i>About</a>
+    <a href="#contact" onclick="closeSidebar()"><i class="fas fa-envelope"></i>Contact</a>
+    <a href="#" id="sidebarCartIcon" onclick="closeSidebar(); openCart()"><i class="fas fa-shopping-cart"></i>Cart</a>
+  </div>
+  
+  <!-- Shopping Cart -->
+  <div class="cart-container" id="cartContainer">
+    <div class="cart-header">
+      <h2 class="cart-title">Your Cart</h2>
+      <button class="close-cart" id="closeCart">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <!-- Cart items will be dynamically added here -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+    </div>
+  </div>
+  
+  <!-- Cart Notification -->
+  <div class="cart-notification" id="cartNotification">
+    <i class="fas fa-check-circle"></i>
+    <span>Item added to cart!</span>
+  </div>
+  
+  <!-- Main Content -->
+  <div class="container">
+    <div class="breadcrumbs">
+      <a href="#"><i class="fas fa-home"></i> Home</a> / Shop
+    </div>
+    
+    <div class="shop-header-row">
+      <div>
+        <h1 class="shop-title">E-Book Store</h1>
+        <div class="shop-meta" id="results-meta"></div>
+      </div>
+      <div>
+        <select class="shop-sort" id="sortSelect">
+          <option value="popularity">Sort by popularity</option>
+          <option value="price-low">Sort by price: low to high</option>
+          <option value="price-high">Sort by price: high to low</option>
+          <option value="az">Sort A-Z</option>
+          <option value="za">Sort Z-A</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="search-box">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" class="search-input" id="searchInput" placeholder="Search e-books...">
+    </div>
+    
+    <div class="filters-section">
+      <div class="filter-group">
+        <label class="filter-label">Category</label>
+        <select class="filter-select" id="categoryFilter">
+          <option value="all">All Categories</option>
+          <option value="marketing">Marketing</option>
+          <option value="publishing">Publishing</option>
+          <option value="design">Design</option>
+          <option value="seo">SEO</option>
+        </select>
+      </div>
+      
+      <div class="filter-group">
+        <label class="filter-label">Price Range</label>
+        <div class="price-filter">
+          <input type="number" class="price-input" id="minPrice" placeholder="Min" min="0">
+          <span>-</span>
+          <input type="number" class="price-input" id="maxPrice" placeholder="Max" min="0">
+        </div>
+      </div>
+      
+      <div class="filter-group">
+        <label class="filter-label">Rating</label>
+        <select class="filter-select" id="ratingFilter">
+          <option value="all">All Ratings</option>
+          <option value="4">4+ Stars</option>
+          <option value="3">3+ Stars</option>
+        </select>
+      </div>
+      
+      <button class="reset-filters" id="resetFilters">Reset Filters</button>
+    </div>
+    
+    <div class="loading-spinner" id="loadingSpinner">
+      <div class="spinner"></div>
+      <p>Loading products...</p>
+    </div>
+    
+    <div class="empty-state" id="emptyState">
+      <i class="fas fa-book-open"></i>
+      <h3>No products found</h3>
+      <p>Try adjusting your search or filters</p>
+      <button class="reset-filters" id="resetEmptyState">Reset Filters</button>
+    </div>
+    
+    <div class="product-grid" id="productGrid"></div>
+    
+    <div class="pagination" id="pagination"></div>
+  </div>
+
+</body>
+<script src="./js/store.js"></script>
+</html>
