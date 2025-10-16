@@ -1,459 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Meet Your Instructor — Hamna Nadeem</title>
+  <title>Brand Scroller - E-Book Store</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;600;500;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <style>
-* {
-  box-sizing: border-box;
-}
+    .brand-scroller-section {
+      max-width: 1200px;
+      width: 100%;
+      border-radius: 16px;
+      background: #ffffff;
+      box-shadow: 0 4px 24px rgba(107, 33, 168, 0.08);
+      padding: 48px 32px;
+      text-align: center;
+      border: 1px solid #f3f0ff;
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
 
-body {
-  background: linear-gradient(180deg, #f0e6ff 0%, #fff 100%);
-  font-family: 'Montserrat', Arial, sans-serif;
-  margin: 0;
-  color: #231942;
-  overflow-x: hidden;
-}
+    .brand-scroller-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-.instructor-section {
-  max-width: 1080px;
-  margin: 56px auto 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 20px;
-}
+    .brand-scroller-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #6d28d9, #8b5cf6);
+    }
 
-.instructor-row {
-  display: flex;
-  gap: 46px;
-  justify-content: center;
-  align-items: flex-start;
-  margin-bottom: 32px;
-  width: 100%;
-}
+    .brand-scroller-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #1e1b4b;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
+    }
 
-.instructor-photo-box {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 8px 30px rgba(162, 89, 255, 0.13);
-  border: 4px solid #a259ff;
-  overflow: hidden;
-  width: 340px;
-  min-width: 250px;
-  max-width: 340px;
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease-out;
-}
+    .brand-scroller-section.visible .brand-scroller-title {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-.instructor-photo-box.animate {
-  opacity: 1;
-  transform: translateY(0);
-}
+    .brand-scroller-desc {
+      color: #6d28d9;
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s;
+    }
 
-.instructor-photo-box img {
-  display: block;
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  background: #eee;
-  border-radius: 12px 12px 0 0;
-}
+    .brand-scroller-section.visible .brand-scroller-desc {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-.instructor-name-caption {
-  text-align: center;
-  padding: 7px 0 9px 0;
-  font-size: 1.06rem;
-  font-weight: 600;
-  color: #a259ff;
-  letter-spacing: 0.5px;
-  background: #fff;
-  border-radius: 0 0 14px 14px;
-  width: 100%;
-}
+    .brand-slider {
+      margin: 0 auto;
+      overflow: hidden;
+      background: #f3f0ff;
+      border-radius: 12px;
+      border: 1px solid #e9d5ff;
+      max-width: 1100px;
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      box-shadow: 0 2px 14px rgba(162, 89, 255, 0.08);
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 0.8s ease 0.6s, transform 0.8s ease 0.6s;
+    }
 
-.instructor-content {
-  flex: 1;
-  max-width: 480px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-width: 340px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease-out 0.2s;
-}
+    .brand-scroller-section.visible .brand-slider {
+      opacity: 1;
+      transform: scale(1);
+    }
 
-.instructor-content.animate {
-  opacity: 1;
-  transform: translateY(0);
-}
+    .brand-slider::before,
+    .brand-slider::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 80px;
+      height: 100%;
+      z-index: 2;
+    }
 
-.instructor-title {
-  font-size: 2.1rem;
-  font-weight: 800;
-  color: #231942;
-  margin-bottom: 8px;
-  line-height: 1.2;
-}
+    .brand-slider::before {
+      left: 0;
+      background: linear-gradient(to right, #f3f0ff, transparent);
+    }
 
-.instructor-title .highlight {
-  color: #a259ff;
-}
+    .brand-slider::after {
+      right: 0;
+      background: linear-gradient(to left, #f3f0ff, transparent);
+    }
 
-.instructor-bio {
-  font-size: 1.08rem;
-  color: #231942;
-  font-weight: 500;
-  margin-bottom: 16px;
-  line-height: 1.6;
-}
+    .brand-track {
+      display: flex;
+      align-items: center;
+      animation: scrollBrands 30s linear infinite;
+      padding: 20px 0;
+    }
 
-.instructor-bio strong {
-  color: #7c30b6;
-  font-weight: 700;
-}
+    .brand-slider:hover .brand-track {
+      animation-play-state: paused;
+    }
 
-.instructor-facts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px 18px;
-  margin-bottom: 0;
-}
+    .brand-logo {
+      height: 60px;
+      width: auto;
+      margin: 0 40px;
+      filter: grayscale(1) brightness(0.9);
+      opacity: 0.85;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
 
-.fact-card {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 18px rgba(162, 89, 255, 0.1);
-  padding: 13px 20px;
-  min-width: 190px;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #231942;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 5px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.5s ease-out;
-}
+    .brand-logo:hover {
+      filter: grayscale(0) brightness(1) drop-shadow(0 4px 12px rgba(107, 33, 168, 0.2));
+      opacity: 1;
+      transform: scale(1.08);
+    }
 
-.fact-card.animate {
-  opacity: 1;
-  transform: translateY(0);
-}
+    @keyframes scrollBrands {
+      0% {
+        transform: translateX(0%);
+      }
 
-.fact-card:nth-child(1) { transition-delay: 0.1s; }
-.fact-card:nth-child(2) { transition-delay: 0.2s; }
-.fact-card:nth-child(3) { transition-delay: 0.3s; }
-.fact-card:nth-child(4) { transition-delay: 0.4s; }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
 
-.fact-card i {
-  color: #a259ff;
-  font-size: 1.12rem;
-  margin-right: 7px;
-  min-width: 18px;
-  text-align: center;
-}
+    /* Responsive adjustments */
+    @media (max-width: 1024px) {
+      .brand-scroller-title {
+        font-size: 2.2rem;
+      }
 
-/* Journey Section */
-.journey-section {
-  width: 100%;
-  max-width: 960px;
-  margin: 24px auto 0 auto;
-  background: transparent;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease-out;
-}
+      .brand-scroller-desc {
+        font-size: 1.1rem;
+      }
 
-.journey-section.animate {
-  opacity: 1;
-  transform: translateY(0);
-}
+      .brand-slider {
+        min-height: 90px;
+      }
 
-.journey-divider {
-  width: 98%;
-  margin: 34px auto 15px auto;
-  border: none;
-  border-top: 2px solid rgba(162, 89, 255, 0.2);
-}
+      .brand-logo {
+        height: 50px;
+        margin: 0 30px;
+      }
+    }
 
-.journey-title {
-  font-size: 1.42rem;
-  font-weight: 800;
-  margin-bottom: 9px;
-  color: #231942;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
+    @media (max-width: 768px) {
+      .brand-scroller-section {
+        padding: 32px 20px;
+      }
 
-.journey-title i {
-  color: #a259ff;
-  font-size: 1.18rem;
-}
+      .brand-scroller-title {
+        font-size: 1.8rem;
+      }
 
-.journey-desc {
-  font-size: 1.02rem;
-  color: #231942;
-  font-weight: 500;
-  margin-bottom: 16px;
-  line-height: 1.6;
-}
+      .brand-scroller-desc {
+        font-size: 1rem;
+        margin-bottom: 32px;
+      }
 
-.journey-desc strong {
-  color: #a259ff;
-  font-weight: 700;
-}
+      .brand-slider {
+        min-height: 80px;
+      }
 
-.journey-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 12px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+      .brand-logo {
+        height: 40px;
+        margin: 0 24px;
+      }
+    }
 
-.journey-step {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 18px rgba(162, 89, 255, 0.1);
-  font-size: 1.02rem;
-  font-weight: 500;
-  color: #231942;
-  display: flex;
-  align-items: flex-start;
-  padding: 13px 18px 13px 18px;
-  gap: 10px;
-  opacity: 0;
-  transform: translateX(-20px);
-  transition: all 0.5s ease-out;
-}
+    @media (max-width: 480px) {
+      body {
+        padding: 12px;
+      }
 
-.journey-step.animate {
-  opacity: 1;
-  transform: translateX(0);
-}
+      .brand-scroller-section {
+        padding: 24px 16px;
+        border-radius: 12px;
+      }
 
-.journey-step:nth-child(1) { transition-delay: 0.1s; }
-.journey-step:nth-child(2) { transition-delay: 0.2s; }
-.journey-step:nth-child(3) { transition-delay: 0.3s; }
-.journey-step:nth-child(4) { transition-delay: 0.4s; }
-.journey-step:nth-child(5) { transition-delay: 0.5s; }
+      .brand-scroller-title {
+        font-size: 1.5rem;
+      }
 
-.journey-step i {
-  color: #a259ff;
-  font-size: 1.08rem;
-  margin-right: 7px;
-  min-width: 18px;
-  margin-top: 1px;
-}
+      .brand-scroller-desc {
+        font-size: 0.9rem;
+        margin-bottom: 24px;
+      }
 
-.journey-step strong {
-  color: #7c30b6;
-  font-weight: 700;
-}
+      .brand-slider {
+        min-height: 70px;
+      }
 
-.journey-cta {
-  width: 100%;
-  background: #faf7ff;
-  color: #a259ff;
-  border-left: 5px solid #a259ff;
-  border-radius: 0 0 10px 10px;
-  padding: 12px 18px;
-  font-weight: 700;
-  font-size: 1.07rem;
-  margin-top: 8px;
-  box-shadow: 0 2px 12px rgba(162, 89, 255, 0.05);
-  cursor: pointer;
-  transition: background 0.2s;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.5s ease-out 0.6s;
-}
+      .brand-logo {
+        height: 32px;
+        margin: 0 18px;
+      }
 
-.journey-cta.animate {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.journey-cta:hover {
-  background: #f0e6ff;
-}
-
-/* Responsive Design */
-@media (max-width: 1050px) {
-  .instructor-section { padding: 0 10px; }
-  .instructor-row { flex-direction: column; align-items: center; }
-  .instructor-content { max-width: 98vw; }
-}
-
-@media (max-width: 768px) {
-  .instructor-title {
-    font-size: 1.8rem;
-  }
-
-  .instructor-photo-box {
-    width: 90%;
-    max-width: 400px;
-  }
-
-  .instructor-facts {
-    justify-content: center;
-  }
-
-  .fact-card {
-    min-width: 160px;
-    flex: 1 1 calc(50% - 18px);
-  }
-}
-
-@media (max-width: 650px) {
-  .instructor-row { flex-direction: column; gap: 22px; }
-  .instructor-photo-box { width: 95vw; max-width: 330px; }
-  .instructor-content { min-width: 0; }
-  .journey-section { max-width: 98vw; }
-
-  .fact-card {
-    flex: 1 1 100%;
-  }
-
-  .instructor-title {
-    font-size: 1.6rem;
-    text-align: center;
-  }
-
-  .instructor-bio {
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .instructor-section {
-    margin-top: 30px;
-  }
-
-  .instructor-title {
-    font-size: 1.4rem;
-  }
-
-  .instructor-bio {
-    font-size: 1rem;
-  }
-
-  .journey-step {
-    padding: 10px 14px;
-    font-size: 0.95rem;
-  }
-}
-
+      .brand-slider::before,
+      .brand-slider::after {
+        width: 40px;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <section class="instructor-section">
-    <div class="instructor-row">
-      <div class="instructor-photo-box">
-        <!-- Replace with your instructor's e-book relevant image -->
-        <img src="images/hamna-instructor.jpg" alt="Hamna Nadeem Instructor Photo">
-        <div class="instructor-name-caption">Hamna Nadeem</div>
-      </div>
-      <div class="instructor-content">
-        <div class="instructor-title">
-          Meet Your Instructor — <span class="highlight">Hamna Nadeem</span>
-        </div>
-        <div class="instructor-bio">
-          Over the past few years, I've helped aspiring authors, entrepreneurs, and businesses launch and grow their <strong>3-book selling platforms</strong> with smart <strong>automation</strong> and proven marketing strategies. Here's why you can trust me to guide you:
-        </div>
-        <div class="instructor-facts">
-          <div class="fact-card"><i class="fas fa-book-open"></i> 200+ E-Books Published</div>
-          <div class="fact-card"><i class="fas fa-dollar-sign"></i> $500K+ Revenue Generated for Authors</div>
-          <div class="fact-card"><i class="fas fa-user-check"></i> 5,000+ Qualified Leads Delivered</div>
-          <div class="fact-card"><i class="fas fa-users"></i> 300+ 3-Book Platforms Launched</div>
-        </div>
-      </div>
+
+
+  <section class="brand-scroller-section">
+    <div class="brand-scroller-title">
+      Trusted by Leading Publishers
     </div>
-    <hr class="journey-divider">
-    <div class="journey-section">
-      <div class="journey-title"><i class="fas fa-rocket"></i> My Journey</div>
-      <div class="journey-desc">
-        I started my digital publishing journey in <strong>2018</strong> with just curiosity and determination. Fast forward to <strong>2025</strong>, I've helped countless students and business owners achieve <strong>$1,000+/mo</strong> in passive income through their 3-book platforms.
-      </div>
-      <ul class="journey-list">
-        <li class="journey-step"><i class="fas fa-star"></i> Launched my first <strong>3-book platform</strong> from scratch and made 100+ sales in the first 3 months.</li>
-        <li class="journey-step"><i class="fas fa-globe"></i> Helped clients in 10+ countries set up their 3-book platforms and start selling digital products.</li>
-        <li class="journey-step"><i class="fas fa-bolt"></i> Automated sales and delivery processes for 3-book platforms, saving clients hundreds of hours in manual work.</li>
-        <li class="journey-step"><i class="fas fa-users"></i> Built a thriving community for 3-book platform entrepreneurs with ongoing support and resources.</li>
-        <li class="journey-step"><i class="fas fa-chart-line"></i> Consistently generated <strong>5-star reviews</strong> and client referrals by delivering real results for 3-book platforms.</li>
-      </ul>
-      <div class="journey-cta">
-        <i class="fas fa-lightbulb"></i>
-        What I Learned (tap to read)
+    <div class="brand-scroller-desc">
+      Partnered with the biggest names in digital publishing, education, and content creation
+    </div>
+    <div class="brand-slider">
+      <div class="brand-track">
+        <!-- Brand logos would go here -->
+        <img class="brand-logo" src="./images/68a4d0e17842797703e6f60c.webp" alt="Penguin Books">
+        <img class="brand-logo" src="./images/68a4d0e1afed750995f2c1f1.png" alt="Pearson">
+        <img class="brand-logo" src="./images/68a4d0e1b130b35ba014a474.png" alt="HarperCollins">
+        <img class="brand-logo" src="./images/68a4d0e1b130b37caa14a473.png" alt="edX">
+        <img class="brand-logo" src="./images/68a4d0e1eddaa3173af294ee.webp" alt="Coursera">
+        <img class="brand-logo" src="./images/68a4d0e2034eda23cea35b60.webp" alt="Udemy">
+        <img class="brand-logo" src="./images/68a4d0e31f29548e633b0e86.png" alt="Amazon KDP">
+        <!-- Duplicate for seamless scrolling -->
+        <img class="brand-logo" src="./images/68a4d0e17842797703e6f60c.webp" alt="Penguin Books">
+        <img class="brand-logo" src="./images/68a4d0e1afed750995f2c1f1.png" alt="Pearson">
+        <img class="brand-logo" src="./images/68a4d0e1b130b35ba014a474.png" alt="HarperCollins">
+        <img class="brand-logo" src="./images/68a4d0e1b130b37caa14a473.png" alt="edX">
+        <img class="brand-logo" src="./images/68a4d0e1eddaa3173af294ee.webp" alt="Coursera">
+        <img class="brand-logo" src="./images/68a4d0e2034eda23cea35b60.webp" alt="Udemy">
+        <img class="brand-logo" src="./images/68a4d0e31f29548e633b0e86.png" alt="Amazon KDP">
       </div>
     </div>
   </section>
 
   <script>
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate');
-        }
-      });
-    }, observerOptions);
-    
-    // Observe elements for animation
-    document.addEventListener('DOMContentLoaded', () => {
-      const elementsToAnimate = [
-        document.querySelector('.instructor-photo-box'),
-        document.querySelector('.instructor-content'),
-        document.querySelector('.journey-section'),
-        document.querySelector('.journey-cta')
-      ];
-      
-      // Add fact cards and journey steps to the list
-      const factCards = document.querySelectorAll('.fact-card');
-      const journeySteps = document.querySelectorAll('.journey-step');
-      
-      elementsToAnimate.forEach(el => {
-        if (el) observer.observe(el);
-      });
-      
-      factCards.forEach(card => {
-        observer.observe(card);
-      });
-      
-      journeySteps.forEach(step => {
-        observer.observe(step);
-      });
-      
-      // Add click functionality to CTA
-      const cta = document.querySelector('.journey-cta');
-      if (cta) {
-        cta.addEventListener('click', () => {
-          alert("I learned that a focused 3-book platform outperforms scattered content strategies. By concentrating on just three high-quality books, authors can build a stronger brand, create better marketing funnels, and establish authority in their niche more effectively than with a single book or dozens of titles.");
+    document.addEventListener('DOMContentLoaded', function () {
+      const brandSection = document.querySelector('.brand-scroller-section');
+
+      // Create an Intersection Observer to detect when the section enters the viewport
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Add the 'visible' class when the section is in view
+            brandSection.classList.add('visible');
+          }
         });
-      }
+      }, {
+        threshold: 0.3 // Trigger when 30% of the element is visible
+      });
+
+      // Start observing the brand section
+      observer.observe(brandSection);
     });
   </script>
 </body>
+
 </html>

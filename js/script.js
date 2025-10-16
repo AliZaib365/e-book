@@ -174,3 +174,21 @@
         });
       }
     });
+     document.addEventListener('DOMContentLoaded', function () {
+      const brandSection = document.querySelector('.brand-scroller-section');
+
+      // Create an Intersection Observer to detect when the section enters the viewport
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Add the 'visible' class when the section is in view
+            brandSection.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.3 // Trigger when 30% of the element is visible
+      });
+
+      // Start observing the brand section
+      observer.observe(brandSection);
+    });
