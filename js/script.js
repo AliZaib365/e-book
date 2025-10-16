@@ -192,3 +192,89 @@
       // Start observing the brand section
       observer.observe(brandSection);
     });
+      document.addEventListener('DOMContentLoaded', function() {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            
+            // For cards, add staggered animation
+            if (entry.target.classList.contains('why-card')) {
+              const cards = document.querySelectorAll('.why-card');
+              cards.forEach((card, index) => {
+                setTimeout(() => {
+                  card.classList.add('animate');
+                }, index * 150);
+              });
+            }
+          }
+        });
+      }, observerOptions);
+      
+      // Observe elements for animation
+      const elementsToAnimate = [
+        document.querySelector('.why-title'),
+        document.querySelector('.why-desc'),
+        document.querySelector('.cta-button')
+      ];
+      
+      elementsToAnimate.forEach(el => {
+        if (el) observer.observe(el);
+      });
+      
+      // Observe cards
+      const cards = document.querySelectorAll('.why-card');
+      if (cards.length > 0) {
+        observer.observe(cards[0]); // Observe first card to trigger all
+      }
+      
+      // Observe stats
+      const stats = document.querySelector('.why-stats');
+      if (stats) observer.observe(stats);
+    });
+      document.querySelectorAll('.faq-question').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var item = btn.parentElement;
+        var open = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if(!open) item.classList.add('open');
+      });
+    });
+
+    // On-scroll animation for FAQ items
+    function onScrollRevealFAQ() {
+      var elements = document.querySelectorAll('.faq-item');
+      var windowHeight = window.innerHeight;
+      elements.forEach(function(el) {
+        var rect = el.getBoundingClientRect();
+        if(rect.top < windowHeight - 40) {
+          el.classList.add('visible');
+        }
+      });
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      onScrollRevealFAQ();
+      window.addEventListener('scroll', onScrollRevealFAQ);
+    });
+     // Scroll animation for footer
+    document.addEventListener('DOMContentLoaded', function() {
+      const footer = document.getElementById('footer');
+      
+      function checkScroll() {
+        const footerPosition = footer.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.2;
+        
+        if(footerPosition < screenPosition) {
+          footer.classList.add('visible');
+        }
+      }
+      
+      window.addEventListener('scroll', checkScroll);
+      // Check on page load in case footer is already in view
+      checkScroll();
+    });
