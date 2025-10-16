@@ -658,3 +658,20 @@
 
     // Initialize the application
     document.addEventListener('DOMContentLoaded', init);
+  // Scroll animation for footer
+    document.addEventListener('DOMContentLoaded', function() {
+      const footer = document.getElementById('footer');
+      
+      function checkScroll() {
+        const footerPosition = footer.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.2;
+        
+        if(footerPosition < screenPosition) {
+          footer.classList.add('visible');
+        }
+      }
+      
+      window.addEventListener('scroll', checkScroll);
+      // Check on page load in case footer is already in view
+      checkScroll();
+    });``
