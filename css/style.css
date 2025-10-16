@@ -272,7 +272,8 @@
   }
 
   .subtitle span {
-    margin-top: -45px;
+    margin-bottom: 60px;
+    margin-top: -105px;
     background: linear-gradient(90deg, #a259ff, #c9a0ff);
     color: #ffffff;
     border-radius: 30px;
@@ -290,7 +291,7 @@
   }
 
   .headline {
-    margin: 40px 0 0 0;
+    margin: -20px 0 0 0;
     font-size: 2.8rem;
     font-weight: 700;
     line-height: 1.2;
