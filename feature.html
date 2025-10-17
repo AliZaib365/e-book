@@ -2,20 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Features | E-Book Store</title>
+  <title>Shop | E-Book Store</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover the powerful features of E-Book Store - the ultimate digital reading platform">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;600;500;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    
-  </style>
+<link rel="stylesheet" href="./css/store.css">
+<link rel="stylesheet" href="./css/feature.css">
 </head>
 <body>
-  <!-- Skip link for accessibility -->
-
-  <!-- Main content starts here -->
-  <main id="main-content">
+  <!-- Enhanced Navbar -->
+  <nav class="navbar">
+<a href="index.html" class="logo" style="text-decoration: none; color: inherit;">
+  <i class="fas fa-book"></i>E-Book<span class="logo-dot">.</span>
+</a>    <div class="navbar-menu">
+      <a href="index.html" class="active">Home</a>
+      <a href="store.html">Store</a>
+      <a href="feature.html">Features</a>
+      <a href="About.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="navbar-actions">
+      <a href="#search"><i class="fas fa-search"></i></a>
+      <a href="#" id="cartIcon">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+      <a href="#account"><i class="fas fa-user"></i></a>
+    </div>
+    <span class="menu-icon" onclick="openSidebar()">&#9776;</span>
+  </nav>
+  
+  <!-- Sidebar for mobile -->
+  <div class="sidebar" id="sidebar">
+    <button class="close-btn" onclick="closeSidebar()">&times;</button>
+    <a href="index.html" onclick="closeSidebar()"><i class="fas fa-home"></i>Home</a>
+    <a href="store.html" onclick="closeSidebar()"><i class="fas fa-store"></i>Store</a>
+    <a href="feature.html" onclick="closeSidebar()"><i class="fas fa-star"></i>Features</a>
+    <a href="About.html" onclick="closeSidebar()"><i class="fas fa-info-circle"></i>About</a>
+    <a href="contact.html" onclick="closeSidebar()"><i class="fas fa-envelope"></i>Contact</a>
+    <a href="#" id="sidebarCartIcon" onclick="closeSidebar(); openCart()"><i class="fas fa-shopping-cart"></i>Cart</a>
+  </div>
+    <main id="main-content">
     <!-- Hero Section -->
     <section class="hero-section" id="hero">
       <div class="hero-content">
@@ -280,8 +307,49 @@
     </section>
   </main>
 
-  <script>
-  
-  </script>
+   <footer class="footer-main" id="footer">
+    <div class="footer-logo">
+      <img src="images/hamnanadeemlogo1.1-02.svg" alt="Hamna Nadeem Logo">
+    </div>
+    
+    <div class="footer-contact">
+      <span class="whatsapp"><i class="fab fa-whatsapp"></i></span>
+      WhatsApp Only | 
+      <a href="https://wa.me/923326023222" class="footer-num" target="_blank" rel="noopener">03326023222</a>
+    </div>
+    
+    <div class="social-links">
+      <a href="#" class="social-link facebook" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#" class="social-link twitter" aria-label="Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="#" class="social-link instagram" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="#" class="social-link linkedin" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+    
+    <div class="footer-links">
+      <a href="#" class="footer-link">Privacy Policy</a>
+      <a href="#" class="footer-link">Terms &amp; Conditions</a>
+      <a href="#" class="footer-link">About Us</a>
+      <a href="#" class="footer-link">Contact</a>
+    </div>
+    
+    <div class="footer-disclaimer">
+      This site is not a part of the Facebook website or Facebook Inc.<br>
+      Additionally, This site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.
+    </div>
+    
+    <div class="footer-copyright">
+      &copy; 2023 Hamna Nadeem E-Book Store. All rights reserved.
+    </div>
+  </footer>
 </body>
+<script src="./js/store.js"></script>
+
 </html>
