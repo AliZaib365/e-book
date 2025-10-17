@@ -1,0 +1,398 @@
+    :root {
+      --primary-color: #a259ff;
+      --primary-dark: #7c30b6;
+      --text-color: #231942;
+      --light-bg: #faf7ff;
+      --white: #ffffff;
+      --shadow: 0 4px 28px rgba(162, 89, 255, 0.10);
+      --transition: all 0.3s ease;
+      --success-color: #23d160;
+      --error-color: #ff3860;
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      background-color: var(--white);
+      font-family: 'Montserrat', Arial, sans-serif;
+      color: var(--text-color);
+      margin: 0;
+      min-height: 100vh;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .contact-container {
+      max-width: 1000px;
+      margin: 48px auto 60px auto;
+      padding: 0 18px;
+      animation: fadeIn 0.8s ease-out;
+      flex: 1;
+    }
+    
+    .contact-heading {
+      text-align: center;
+      font-size: 2.3rem;
+      font-weight: 800;
+      margin-bottom: 40px;
+      color: var(--text-color);
+      letter-spacing: 0.02em;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    .contact-heading::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+      border-radius: 2px;
+    }
+    
+    .contact-form {
+      width: 100%;
+      background: var(--white);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 38px 36px 28px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin-bottom: 30px;
+      transition: var(--transition);
+      animation: slideUp 0.6s ease-out 0.2s both;
+    }
+    
+    .form-row {
+      display: flex;
+      gap: 18px;
+      width: 100%;
+      animation: fadeIn 0.5s ease-out 0.4s both;
+    }
+    
+    .form-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      animation: fadeIn 0.5s ease-out 0.6s both;
+    }
+    
+    .form-label {
+      font-weight: 700;
+      margin-bottom: 2px;
+      color: var(--primary-dark);
+      font-size: 1.05rem;
+      letter-spacing: 0.01em;
+      transition: var(--transition);
+    }
+    
+    .form-required {
+      color: var(--primary-color);
+    }
+    
+    .form-input, .form-textarea, .form-select {
+      width: 100%;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 1.06rem;
+      background: var(--light-bg);
+      border: 2px solid rgba(162, 89, 255, 0.2);
+      border-radius: 7px;
+      padding: 13px 14px;
+      color: var(--text-color);
+      transition: var(--transition);
+      outline: none;
+      resize: none;
+    }
+    
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 2px rgba(162, 89, 255, 0.2);
+      transform: translateY(-2px);
+    }
+    
+    .phone-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+    }
+    
+    .form-select {
+      max-width: 60px;
+      background: var(--light-bg);
+      color: var(--primary-color);
+      border: 2px solid rgba(162, 89, 255, 0.2);
+      font-weight: 600;
+      padding: 13px 8px;
+    }
+    
+    .form-textarea {
+      min-height: 110px;
+      max-height: 260px;
+      animation: fadeIn 0.5s ease-out 0.8s both;
+    }
+    
+    .submit-btn {
+      background: linear-gradient(90deg, var(--primary-color), var(--primary-dark) 90%);
+      color: var(--white);
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.15rem;
+      padding: 15px 50px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 2px 10px rgba(162, 89, 255, 0.15);
+      align-self: flex-start;
+      letter-spacing: 0.01em;
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 0.5s ease-out 1s both;
+    }
+    
+    .submit-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+    
+    .submit-btn:hover {
+      background: linear-gradient(90deg, var(--primary-dark), var(--primary-color) 90%);
+      transform: translateY(-2px) scale(1.04);
+      box-shadow: 0 4px 15px rgba(162, 89, 255, 0.3);
+    }
+    
+    .submit-btn:hover::before {
+      left: 100%;
+    }
+    
+    .submit-btn:active {
+      transform: translateY(0) scale(1);
+    }
+    
+    .contact-support {
+      margin-top: 35px;
+      font-size: 1.12rem;
+      font-weight: 600;
+      color: var(--text-color);
+      animation: fadeIn 0.5s ease-out 1.2s both;
+    }
+    
+    .contact-support a {
+      color: var(--primary-color);
+      text-decoration: underline;
+      font-weight: 700;
+      transition: var(--transition);
+      word-break: break-all;
+    }
+    
+    .contact-support a:hover {
+      color: var(--primary-dark);
+    }
+    
+    /* Toast Notification Styles */
+    .toast-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .toast {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 16px 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 300px;
+      max-width: 400px;
+      transform: translateX(400px);
+      opacity: 0;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+      border-left: 4px solid var(--success-color);
+    }
+    
+    .toast.error {
+      border-left-color: var(--error-color);
+    }
+    
+    .toast.show {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    
+    .toast-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 12px;
+    }
+    
+    .toast.success .toast-icon {
+      background-color: var(--success-color);
+    }
+    
+    .toast.error .toast-icon {
+      background-color: var(--error-color);
+    }
+    
+    .toast-content {
+      flex: 1;
+    }
+    
+    .toast-title {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+    
+    .toast-message {
+      font-size: 0.9rem;
+      color: #666;
+    }
+    
+    .toast-close {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      color: #999;
+      cursor: pointer;
+      transition: var(--transition);
+      padding: 0;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .toast-close:hover {
+      color: var(--text-color);
+    }
+    
+    /* Form validation styles */
+    .form-input:invalid:not(:focus):not(:placeholder-shown) {
+      border-color: var(--error-color);
+    }
+    
+    .form-input:valid:not(:focus):not(:placeholder-shown) {
+      border-color: var(--success-color);
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .contact-container { 
+        padding: 0 4vw; 
+        margin: 30px auto 40px auto;
+      }
+      
+      .contact-heading {
+        font-size: 2rem;
+        margin-bottom: 30px;
+      }
+      
+      .contact-form { 
+        padding: 24px 7vw 20px 7vw; 
+        gap: 20px;
+      }
+      
+      .form-row { 
+        flex-direction: column; 
+        gap: 6px; 
+      }
+      
+      .submit-btn { 
+        width: 100%; 
+        text-align: center;
+      }
+      
+      .contact-support {
+        font-size: 1rem;
+        text-align: center;
+      }
+      
+      .toast-container {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+      }
+      
+      .toast {
+        min-width: auto;
+        max-width: none;
+      }
+    }
+    
+    @media (max-width: 500px) {
+      .contact-heading { 
+        font-size: 1.5rem; 
+      }
+      
+      .form-label { 
+        font-size: 0.98rem; 
+      }
+      
+      .contact-support { 
+        font-size: 0.9rem; 
+      }
+      
+      .contact-form {
+        padding: 20px 5vw 15px 5vw;
+      }
+    }
+    
+    @media (max-width: 350px) {
+      .phone-group {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .form-select {
+        max-width: 100%;
+        width: 100%;
+      }
+    }

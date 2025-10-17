@@ -675,3 +675,185 @@
       // Check on page load in case footer is already in view
       checkScroll();
     });``
+    document.addEventListener('DOMContentLoaded', function() {
+      const contactForm = document.getElementById('contactForm');
+      const toastContainer = document.getElementById('toastContainer');
+      
+      // Function to show toast notification
+      function showToast(title, message, type = 'success') {
+        const toast = document.createElement('div');
+        toast.className = `toast ${type}`;
+        
+        const iconClass = type === 'success' ? 'fa-check' : 'fa-exclamation';
+        
+        toast.innerHTML = `
+          <div class="toast-icon">
+            <i class="fas ${iconClass}"></i>
+          </div>
+          <div class="toast-content">
+            <div class="toast-title">${title}</div>
+            <div class="toast-message">${message}</div>
+          </div>
+          <button class="toast-close">
+            <i class="fas fa-times"></i>
+          </button>
+        `;
+        
+        toastContainer.appendChild(toast);
+        
+        // Show the toast with animation
+        setTimeout(() => {
+          toast.classList.add('show');
+        }, 10);
+        
+        // Auto remove toast after 5 seconds
+        const autoRemove = setTimeout(() => {
+          hideToast(toast);
+        }, 5000);
+        
+        // Close button functionality
+        const closeBtn = toast.querySelector('.toast-close');
+        closeBtn.addEventListener('click', () => {
+          clearTimeout(autoRemove);
+          hideToast(toast);
+        });
+      }
+      
+      // Function to hide toast with animation
+      function hideToast(toast) {
+        toast.classList.remove('show');
+        setTimeout(() => {
+          if (toast.parentNode) {
+            toast.parentNode.removeChild(toast);
+          }
+        }, 400);
+      }
+      
+      // Form submission handler
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const firstName = document.getElementById('firstName').value;
+        const email = document.getElementById('email').value;
+        
+        // Simple validation
+        if (!firstName || !email) {
+          showToast(
+            'Missing Information', 
+            'Please fill in all required fields.', 
+            'error'
+          );
+          return;
+        }
+        
+        // Simulate form submission
+        const submitBtn = this.querySelector('.submit-btn');
+        const originalText = submitBtn.textContent;
+        
+        // Show loading state
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+        
+        // Simulate API call
+        setTimeout(() => {
+          // Show success toast
+          showToast(
+            'Message Sent Successfully!', 
+            'Thank you for your message. We will get back to you soon.', 
+            'success'
+          );
+          
+          // Reset form
+          contactForm.reset();
+          
+          // Reset button
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        }, 2000);
+      });
+      
+      // Add input validation feedback
+      const requiredInputs = contactForm.querySelectorAll('input[required]');
+      requiredInputs.forEach(input => {
+        input.addEventListener('blur', function() {
+          if (!this.value) {
+            this.style.borderColor = 'var(--error-color)';
+          } else {
+            this.style.borderColor = 'var(--success-color)';
+          }
+        });
+      });
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+      // Scroll animation observer
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+
+            // Animate stats counting
+            if (entry.target.id === 'stats') {
+              animateStats();
+            }
+          }
+        });
+      }, observerOptions);
+
+      // Observe all animated elements
+      const animatedElements = document.querySelectorAll('.section-title, .section-subtitle, .ceo-container, .stats-container, .mission-container, .values-container, .team-container, .cta-title, .cta-description, .cta-button');
+      animatedElements.forEach(el => {
+        observer.observe(el);
+      });
+
+      // Stats counting animation
+      function animateStats() {
+        const statNumbers = document.querySelectorAll('.stat-number');
+
+        statNumbers.forEach(stat => {
+          const target = parseInt(stat.getAttribute('data-target'));
+          const duration = 2000; // 2 seconds
+          const step = target / (duration / 16); // 60fps
+          let current = 0;
+
+          const timer = setInterval(() => {
+            current += step;
+            if (current >= target) {
+              current = target;
+              clearInterval(timer);
+            }
+
+            // Format number with commas
+            stat.textContent = Math.floor(current).toLocaleString();
+          }, 16);
+        });
+      }
+
+      // Smooth scrolling for navigation
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Parallax effect for hero section
+      window.addEventListener('scroll', function () {
+        const scrolled = window.pageYOffset;
+        const hero = document.getElementById('hero');
+        if (hero) {
+          hero.style.backgroundPosition = `0px ${scrolled * 0.5}px`;
+        }
+      });
+    });

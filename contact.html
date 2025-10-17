@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | E-Book Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;600;500;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./css/store.css">
+    <link rel="stylesheet" href="./css/contact.css">
+</head>
+<body>
+      <!-- Enhanced Navbar -->
+  <nav class="navbar">
+    <span class="logo"><i class="fas fa-book"></i>E-Book<span class="logo-dot">.</span></span>
+    <div class="navbar-menu">
+      <a href="index.html" class="active">Home</a>
+      <a href="store.html">Store</a>
+      <a href="#features">Features</a>
+      <a href="About.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="navbar-actions">
+      <a href="#search"><i class="fas fa-search"></i></a>
+      <a href="#" id="cartIcon">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+      <a href="#account"><i class="fas fa-user"></i></a>
+    </div>
+    <span class="menu-icon" onclick="openSidebar()">&#9776;</span>
+  </nav>
+  
+  <!-- Sidebar for mobile -->
+  <div class="sidebar" id="sidebar">
+    <button class="close-btn" onclick="closeSidebar()">&times;</button>
+    <a href="index.html" onclick="closeSidebar()"><i class="fas fa-home"></i>Home</a>
+    <a href="store.html" onclick="closeSidebar()"><i class="fas fa-store"></i>Store</a>
+    <a href="#features" onclick="closeSidebar()"><i class="fas fa-star"></i>Features</a>
+    <a href="#about" onclick="closeSidebar()"><i class="fas fa-info-circle"></i>About</a>
+    <a href="#contact" onclick="closeSidebar()"><i class="fas fa-envelope"></i>Contact</a>
+    <a href="#" id="sidebarCartIcon" onclick="closeSidebar(); openCart()"><i class="fas fa-shopping-cart"></i>Cart</a>
+  </div>
+  
+  <div class="contact-container">
+    <div class="contact-heading">
+      Have a question for Hamna Nadeem?
+    </div>
+    <form class="contact-form" autocomplete="off" id="contactForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="firstName">Name <span class="form-required">*</span></label>
+          <input class="form-input" type="text" id="firstName" name="firstName" placeholder="First" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" style="visibility:hidden;" for="lastName">Last</label>
+          <input class="form-input" type="text" id="lastName" name="lastName" placeholder="Last">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="email">Email <span class="form-required">*</span></label>
+        <input class="form-input" type="email" id="email" name="email" required placeholder="you@example.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="phone">Phone</label>
+        <div class="phone-group">
+          <select class="form-select" id="countryCode" name="countryCode">
+            <option value="+92" selected>🇵🇰 +92</option>
+            <option value="+1">🇺🇸 +1</option>
+            <option value="+44">🇬🇧 +44</option>
+            <option value="+91">🇮🇳 +91</option>
+          </select>
+          <input class="form-input" type="tel" id="phone" name="phone" pattern="[0-9]{10,15}" placeholder="0301 2345678">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="message">Message</label>
+        <textarea class="form-textarea" id="message" name="message" placeholder="Type your message..."></textarea>
+      </div>
+      <button class="submit-btn" type="submit">Submit</button>
+    </form>
+    <div class="contact-support">
+      Need help accessing your courses? Please email us at
+      <a href="mailto:support@ebookstore.com">support@ebookstore.com</a>.
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+<footer class="footer-main" id="footer">
+    <div class="footer-logo">
+      <img src="images/hamnanadeemlogo1.1-02.svg" alt="Hamna Nadeem Logo">
+    </div>
+    
+    <div class="footer-contact">
+      <span class="whatsapp"><i class="fab fa-whatsapp"></i></span>
+      WhatsApp Only | 
+      <a href="https://wa.me/923326023222" class="footer-num" target="_blank" rel="noopener">03326023222</a>
+    </div>
+    
+    <div class="social-links">
+      <a href="#" class="social-link facebook" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#" class="social-link twitter" aria-label="Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="#" class="social-link instagram" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="#" class="social-link linkedin" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+    
+    <div class="footer-links">
+      <a href="#" class="footer-link">Privacy Policy</a>
+      <a href="#" class="footer-link">Terms &amp; Conditions</a>
+      <a href="#" class="footer-link">About Us</a>
+      <a href="#" class="footer-link">Contact</a>
+    </div>
+    
+    <div class="footer-disclaimer">
+      This site is not a part of the Facebook website or Facebook Inc.<br>
+      Additionally, This site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.
+    </div>
+    
+    <div class="footer-copyright">
+      &copy; 2023 Hamna Nadeem E-Book Store. All rights reserved.
+    </div>
+  </footer>
+</body>
+<script src="./js/store.js"></script>
+</html>

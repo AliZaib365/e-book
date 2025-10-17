@@ -278,3 +278,4 @@
       // Check on page load in case footer is already in view
       checkScroll();
     });
+     

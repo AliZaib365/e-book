@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shop | E-Book Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;600;500;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="./css/store.css">
+<link rel="stylesheet" href="./css/About.css">
+</head>
+<body>
+  <!-- Enhanced Navbar -->
+  <nav class="navbar">
+    <span class="logo"><i class="fas fa-book"></i>E-Book<span class="logo-dot">.</span></span>
+    <div class="navbar-menu">
+      <a href="index.html" class="active">Home</a>
+      <a href="store.html">Store</a>
+      <a href="#features">Features</a>
+      <a href="About.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="navbar-actions">
+      <a href="#search"><i class="fas fa-search"></i></a>
+      <a href="#" id="cartIcon">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+      <a href="#account"><i class="fas fa-user"></i></a>
+    </div>
+    <span class="menu-icon" onclick="openSidebar()">&#9776;</span>
+  </nav>
+  
+  <!-- Sidebar for mobile -->
+  <div class="sidebar" id="sidebar">
+    <button class="close-btn" onclick="closeSidebar()">&times;</button>
+    <a href="index.html" onclick="closeSidebar()"><i class="fas fa-home"></i>Home</a>
+    <a href="store.html" onclick="closeSidebar()"><i class="fas fa-store"></i>Store</a>
+    <a href="#features" onclick="closeSidebar()"><i class="fas fa-star"></i>Features</a>
+    <a href="About.html" onclick="closeSidebar()"><i class="fas fa-info-circle"></i>About</a>
+    <a href="contact.html" onclick="closeSidebar()"><i class="fas fa-envelope"></i>Contact</a>
+    <a href="#" id="sidebarCartIcon" onclick="closeSidebar(); openCart()"><i class="fas fa-shopping-cart"></i>Cart</a>
+  </div>
+  
+  <section class="hero-section" id="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">About E-Book Store</h1>
+      <p class="hero-subtitle">Transforming Reading in the Digital Age</p>
+      <p class="hero-description">Welcome to the future of reading, where technology meets literature to create an
+        unparalleled digital reading experience. Founded by visionary entrepreneur Hamna Nadeem, our e-book store is
+        revolutionizing how people discover, purchase, and enjoy books.</p>
+    </div>
+    <div class="scroll-indicator">
+      <span class="scroll-text">Scroll to Explore</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- About CEO Section -->
+  <section class="section ceo-section" id="ceo">
+    <h2 class="section-title">Our Visionary Leader</h2>
+    <p class="section-subtitle">Meet the mind behind our digital revolution</p>
+    <div class="ceo-container">
+      <div class="ceo-image">
+        <div class="ceo-img">
+          <img style="object-fit: cover;" src="./images/hamna2.jpg" alt="">
+        </div>
+      </div>
+      <div class="ceo-content">
+        <h3 class="ceo-name">Hamna Nadeem</h3>
+        <p class="ceo-position">Founder & CEO</p>
+        <div class="ceo-bio">
+          <p>Hamna Nadeem is a trailblazing entrepreneur with a passion for literature and technology. With over a
+            decade of experience in the publishing industry and a background in software development, she identified the
+            need for a more intuitive and accessible digital reading platform.</p>
+          <p>Under her leadership, E-Book Store has grown from a startup with 5 employees to a market leader with over
+            200 team members and millions of satisfied customers worldwide. Her innovative approach to digital
+            publishing has earned her numerous industry awards and recognition.</p>
+          <p>Hamna holds a Master's degree in Digital Media from Stanford University and frequently speaks at
+            international tech and publishing conferences about the future of digital content consumption.</p>
+        </div>
+        <blockquote class="ceo-quote">
+          "Books have the power to transform lives. My mission is to make that transformation accessible to everyone,
+          everywhere, through the magic of technology."
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="section stats-section" id="stats">
+    <h2 class="section-title">By The Numbers</h2>
+    <p class="section-subtitle">Our impact in the digital reading space</p>
+    <div class="stats-container">
+      <div class="stat-item">
+        <div class="stat-icon">
+          <i class="fas fa-book-open"></i>
+        </div>
+        <div class="stat-number" data-target="500000">0</div>
+        <div class="stat-text">Titles Available</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <div class="stat-number" data-target="2500000">0</div>
+        <div class="stat-text">Happy Readers</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon">
+          <i class="fas fa-globe"></i>
+        </div>
+        <div class="stat-number" data-target="150">0</div>
+        <div class="stat-text">Countries Served</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon">
+          <i class="fas fa-award"></i>
+        </div>
+        <div class="stat-number" data-target="25">0</div>
+        <div class="stat-text">Industry Awards</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="section mission-section" id="mission">
+    <h2 class="section-title">Our Mission & Approach</h2>
+    <p class="section-subtitle">How we're changing the reading experience</p>
+    <div class="mission-container">
+      <div class="mission-item">
+        <div class="mission-icon">
+          <i class="fas fa-bullseye"></i>
+        </div>
+        <div class="mission-content">
+          <h3>Our Mission</h3>
+          <p>To democratize access to literature by creating the world's most user-friendly, accessible, and
+            comprehensive digital bookstore. We believe that everyone deserves access to the transformative power of
+            books, regardless of their location, device, or reading preferences.</p>
+        </div>
+      </div>
+      <div class="mission-item">
+        <div class="mission-icon">
+          <i class="fas fa-eye"></i>
+        </div>
+        <div class="mission-content">
+          <h3>Our Vision</h3>
+          <p>To become the leading global platform for digital reading, where authors can connect directly with their
+            audience, and readers can discover stories that resonate with their lives. We envision a future where
+            digital and physical reading coexist harmoniously, each enhancing the other.</p>
+        </div>
+      </div>
+      <div class="mission-item">
+        <div class="mission-icon">
+          <i class="fas fa-rocket"></i>
+        </div>
+        <div class="mission-content">
+          <h3>Our Approach</h3>
+          <p>We combine cutting-edge technology with deep literary expertise to create an unparalleled reading
+            experience. Our platform is built on three pillars: exceptional content curation, intuitive user experience,
+            and innovative reading technology that adapts to each reader's preferences.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="section values-section" id="values">
+    <h2 class="section-title">Our Core Values</h2>
+    <p class="section-subtitle">The principles that guide everything we do</p>
+    <div class="values-container">
+      <div class="value-card">
+        <div class="value-icon">
+          <i class="fas fa-heart"></i>
+        </div>
+        <h3 class="value-title">Passion for Literature</h3>
+        <p>We're not just tech enthusiasts; we're book lovers first. Our team is comprised of avid readers who
+          understand and appreciate the magic of a good story.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <h3 class="value-title">Innovation</h3>
+        <p>We constantly push the boundaries of what's possible in digital reading, developing new features and
+          technologies that enhance the reading experience.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">
+          <i class="fas fa-handshake"></i>
+        </div>
+        <h3 class="value-title">Author Partnership</h3>
+        <p>We believe in fair compensation and transparent relationships with authors and publishers, ensuring they
+          benefit from the digital revolution.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <h3 class="value-title">Community Focus</h3>
+        <p>We foster a vibrant community of readers through book clubs, author events, and discussion forums that bring
+          book lovers together.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">
+          <i class="fas fa-globe"></i>
+        </div>
+        <h3 class="value-title">Accessibility</h3>
+        <p>We're committed to making reading accessible to everyone, with features designed for readers with visual
+          impairments and other disabilities.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3 class="value-title">Privacy & Security</h3>
+        <p>We protect our users' data and reading habits with state-of-the-art security measures, ensuring your literary
+          journey remains private.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="section team-section" id="team">
+    <h2 class="section-title">Meet Our Leadership Team</h2>
+    <p class="section-subtitle">The talented individuals driving our success</p>
+    <div class="team-container">
+      <div class="team-member">
+        <div class="member-image">
+          <i class="fas fa-user-tie"></i>
+        </div>
+        <h3 class="member-name">Sarah Johnson</h3>
+        <p class="member-role">Chief Technology Officer</p>
+        <p>Former Google engineer with 15+ years in software development.</p>
+      </div>
+      <div class="team-member">
+        <div class="member-image">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3 class="member-name">Michael Chen</h3>
+        <p class="member-role">Head of Marketing</p>
+        <p>Digital marketing expert with background at Amazon and Netflix.</p>
+      </div>
+      <div class="team-member">
+        <div class="member-image">
+          <i class="fas fa-pen-fancy"></i>
+        </div>
+        <h3 class="member-name">Emily Rodriguez</h3>
+        <p class="member-role">Content Director</p>
+        <p>Former publishing executive with deep industry connections.</p>
+      </div>
+      <div class="team-member">
+        <div class="member-image">
+          <i class="fas fa-hands-helping"></i>
+        </div>
+        <h3 class="member-name">David Kim</h3>
+        <p class="member-role">Customer Experience Lead</p>
+        <p>User experience specialist focused on creating intuitive interfaces.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section" id="cta">
+    <h2 class="cta-title">Join Our Literary Revolution</h2>
+    <p class="cta-description">Discover why millions of readers worldwide have made E-Book Store their preferred digital
+      reading destination. Explore our vast collection and experience the future of reading today.</p>
+    <a href="#" class="cta-button">Start Reading Now</a>
+  </section>
+  
+
+   <footer class="footer-main" id="footer">
+    <div class="footer-logo">
+      <img src="images/hamnanadeemlogo1.1-02.svg" alt="Hamna Nadeem Logo">
+    </div>
+    
+    <div class="footer-contact">
+      <span class="whatsapp"><i class="fab fa-whatsapp"></i></span>
+      WhatsApp Only | 
+      <a href="https://wa.me/923326023222" class="footer-num" target="_blank" rel="noopener">03326023222</a>
+    </div>
+    
+    <div class="social-links">
+      <a href="#" class="social-link facebook" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#" class="social-link twitter" aria-label="Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="#" class="social-link instagram" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="#" class="social-link linkedin" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+    
+    <div class="footer-links">
+      <a href="#" class="footer-link">Privacy Policy</a>
+      <a href="#" class="footer-link">Terms &amp; Conditions</a>
+      <a href="#" class="footer-link">About Us</a>
+      <a href="#" class="footer-link">Contact</a>
+    </div>
+    
+    <div class="footer-disclaimer">
+      This site is not a part of the Facebook website or Facebook Inc.<br>
+      Additionally, This site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.
+    </div>
+    
+    <div class="footer-copyright">
+      &copy; 2023 Hamna Nadeem E-Book Store. All rights reserved.
+    </div>
+  </footer>
+</body>
+<script src="./js/store.js"></script>
+
+</html>
