@@ -404,7 +404,6 @@
         return;
       }
       
-      alert('Thank you for your purchase! This is a demo store.');
       cart = [];
       saveCartToStorage();
       updateCartUI();
